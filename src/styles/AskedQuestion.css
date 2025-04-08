@@ -14,7 +14,7 @@
     margin: 5px auto;
     min-height: 60px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
     margin-bottom: 10px;
 }
@@ -26,17 +26,18 @@
     cursor: pointer;
 }
 
-
-
 .accordion-icon {
-    font-size: 2rem;
     color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .accordion-details {
-    padding: 15px;
+    padding: 10px;
+    margin-left: 10px;
     background-color: #2a2a2a;
-    color: white;
+    color: #fff;
     font-size: 14px;
     line-height: 1.5;
 }

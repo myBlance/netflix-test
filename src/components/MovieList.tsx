@@ -11,6 +11,9 @@ interface Movie {
     title: string;
     poster_path: string;
     overview: string; // Add overview for movie description
+    vote_average: number; // Add vote_average for movie rating
+    release_date?: string; // Add release_date for extracting year
+    genre_ids?: number[]; // Add genre_ids for genres
 }
 
 const MovieList: React.FC = () => {
@@ -55,9 +58,9 @@ const MovieList: React.FC = () => {
                                 title: movie.title,
                                 description: movie.overview,
                                 posterPath: movie.poster_path,
-                                year: "Unknown", // Default value or fetch from API if available
-                                genres: [], // Default value or fetch from API if available
-                                rating: "N/A", // Default value or fetch from API if available
+                                year: movie.release_date ? movie.release_date.split("-")[0] : "Unknown", 
+                                genres: movie.genre_ids ? movie.genre_ids.map(String) : [], 
+                                rating: movie.vote_average ? movie.vote_average.toString() : "N/A", 
                             }}
                         />
                     ))}

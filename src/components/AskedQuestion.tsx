@@ -100,7 +100,7 @@ const AskedQuestions: React.FC = () => {
                         aria-controls={`panel${index}d-content`}
                         id={`panel${index}d-header`}
                     >
-                        <Typography component="span">{question.title}</Typography>
+                        <Typography component="span" sx={{marginLeft:2}}>{question.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails className='accordion-details'>
                         <Typography>{question.description}</Typography>

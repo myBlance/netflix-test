@@ -50,14 +50,19 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
 
                     <Box className="modal-content">
                         <p className="movie-details">
-                            {movie.year} • {movie.rating} • Movie • {movie.genres.join(' • ')}
+                            {movie.year} • {movie.rating} • Movie •{' '}
+                            {movie.genres.includes('Horror') && movie.genres.includes('Comedy')
+                                ? 'Horror • Comedy'
+                                : movie.genres.length > 0
+                                ? movie.genres.join(' • ')
+                                : 'No genres available'}
                         </p>
                         <p className="movie-description">{movie.description}</p>
                         <Button 
                             variant="contained"
                             className="signup-button"
                         >
-                            Finish Sign-Up
+                            ▶ Xem ngay
                         </Button>
                     </Box>
                 </Box>

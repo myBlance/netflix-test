@@ -41,7 +41,7 @@
 .prev-button,
 .next-button {
     background: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
