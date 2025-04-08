@@ -1,0 +1,48 @@
+.asked-questions-container {
+    padding: 20px;
+    background-color: #141414;
+    color: #fff;
+}
+
+.asked-questions-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.accordion-container {
+    margin: 5px auto;
+    min-height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.accordion-summary {
+    padding: 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.accordion-icon {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.accordion-details {
+    padding: 15px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.accordion-details p {
+    margin: 0;
+    text-align: left;
+}
+
