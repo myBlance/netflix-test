@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Show from '../components/Show';
+import CastList from '../components/CastList';
 
 const MovieDetail = () => {
     const { id } = useParams();
@@ -10,8 +11,13 @@ const MovieDetail = () => {
     return (
         <div>
             <Navbar />
-            {numericId !== undefined && <Show id={numericId} type="movie" />}
-            <Footer/>
+            {numericId !== undefined && (
+                <>
+                    <Show id={numericId} type="movie" />
+                    <CastList movieId={numericId} />
+                </>
+            )}
+            <Footer />
         </div>
     );
 };

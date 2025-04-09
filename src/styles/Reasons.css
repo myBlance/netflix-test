@@ -1,13 +1,13 @@
 .reasons {
-    padding: 40px 20px;
     background-color: #141414;
     color: white;
     text-align: left;
 }
 
 .reasons-title {
+    margin-left: 10%;
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .reasons-list {

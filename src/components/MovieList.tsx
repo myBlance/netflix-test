@@ -10,10 +10,10 @@ interface Movie {
     id: number;
     title: string;
     poster_path: string;
-    overview: string; // Add overview for movie description
-    vote_average: number; // Add vote_average for movie rating
-    release_date?: string; // Add release_date for extracting year
-    genre_ids?: number[]; // Add genre_ids for genres
+    overview: string; 
+    vote_average: number; 
+    release_date?: string; 
+    genre_ids?: number[]; 
 }
 
 const MovieList: React.FC = () => {
@@ -22,7 +22,7 @@ const MovieList: React.FC = () => {
 
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
             setMovies(response.data.results);
         }
         fetchMovies();

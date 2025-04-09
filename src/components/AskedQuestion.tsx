@@ -96,11 +96,11 @@ const AskedQuestions: React.FC = () => {
 
                 >
                     <AccordionSummary className='accordion-summary'
-                        expandIcon={<AddIcon className="accordion-icon" />}
+                        expandIcon={<AddIcon className="accordion-icon" sx={{fontSize:26}} />}
                         aria-controls={`panel${index}d-content`}
                         id={`panel${index}d-header`}
                     >
-                        <Typography component="span" sx={{marginLeft:2}}>{question.title}</Typography>
+                        <Typography component="span" >{question.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails className='accordion-details'>
                         <Typography>{question.description}</Typography>

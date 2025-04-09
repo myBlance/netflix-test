@@ -1,0 +1,73 @@
+.cast-section {
+    width: 80%;
+    margin-left: 10%;
+}
+  
+.cast-title {
+    font-size: 28px;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5%;
+    color: #fff;
+}
+  
+.cast-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    height: 400px;
+}
+  
+.cast-card {
+    background: #fff;
+    width: 130px;
+    height: 300px;
+    margin: 20px 0 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.cast-card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #9b3e3e;
+}
+
+.cast-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+  
+.cast-placeholder {
+    width: 100%;
+    height: 180px;
+    background: #ddd url('https://img.icons8.com/ios-filled/100/user.png') center no-repeat;
+    background-size: 40px;
+}
+  
+.cast-name {
+    font-weight: bold;
+}
+  
+.cast-character {
+    color: #666;
+}
+  
+.cast-viewmore {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+  
+.view-more {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+  

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Box, IconButton, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useNavigate } from 'react-router-dom'; // 👉 thêm dòng này
+import { useNavigate } from 'react-router-dom'; 
 import '../styles/Movie.css'; 
 
 interface MovieProps {
