@@ -47,7 +47,30 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                             {show.genres.map((genre: any) => genre.name).join(", ")} • {show.runtime || show.episode_run_time?.[0]}m
                         </p>
                         <div className="show-user-score">
-                            <span>{Math.round(show.vote_average * 10)}%</span> User Score
+                            <div className="score-circle">
+                                <svg viewBox="0 0 36 36" className="circular-chart green">
+                                    <path
+                                        className="circle-bg"
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <path
+                                        className="circle"
+                                        strokeDasharray={`${Math.round(show.vote_average * 10)}, 100`}
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <text x="18" y="18.35" className="percentage">
+                                        {Math.round(show.vote_average * 10)}
+                                        %
+                                    </text>
+                                </svg>
+                            </div>
+                            <div>
+                                <div><strong>User Score</strong></div>
+                            </div>
                         </div>
                         <p className="show-tagline">{show.tagline}</p>
                         <h2>Overview</h2>
@@ -60,7 +83,11 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                                 </div>
                             ))}
                         </div>
-                        <button className="play-trailer-button">▶ Play Trailer</button>
+                        <button 
+                            className="play-trailer-button"
+                            // show trailer dạng Modal
+                        >▶ Play Trailer
+                        </button>
                     </div>
                 </div>
             </div>

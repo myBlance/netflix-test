@@ -48,19 +48,45 @@
 }
 
 .show-user-score {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 1.1rem;
 }
-
-.show-user-score span {
-    background-color: #081c22;
-    color: #21d07a;
-    padding: 5px 10px;
-    border-radius: 5px;
+  
+.score-circle {
+    width: 60px;
+    height: 60px;
+}
+  
+.circular-chart {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+  
+.circle-bg {
+    fill: none;
+    stroke: #204529;
+    stroke-width: 3.8;
+}
+  
+.circle {
+    fill: none;
+    stroke: #21d07a;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: stroke-dasharray 0.5s ease-out;
+}
+  
+.percentage {
+    fill: #fff;
+    font-size: 9px;
+    text-anchor: middle;
+    dominant-baseline: middle;
 }
 
 .show-tagline {
