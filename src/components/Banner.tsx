@@ -4,10 +4,16 @@ import "../styles/Banner.css";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useNavigate } from "react-router-dom";
 
 const Banner: React.FC = () => {
     const [movies, setMovies] = useState<any[]>([]);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate(); 
+
+    const handleWatchNow = (movie: any) => {
+        navigate(`/movie/${movie.id}`);
+    };
 
     useEffect(() => {
         async function fetchMovies() {
@@ -37,7 +43,12 @@ const Banner: React.FC = () => {
                 <div className="banner-content">
                     <h1>{movies[currentSlide]?.title || movies[currentSlide]?.name}</h1>
                     <p>{movies[currentSlide]?.overview}</p>
-                    <button className="play-button">▶ Xem ngay</button>
+                    <button 
+                        className="play-button"
+                        onClick={() => handleWatchNow(movies[currentSlide])}
+                    >
+                        ▶ Xem ngay
+                    </button>
                 </div>
                 <div className="banner-controls">
                     <button className="prev-button" onClick={handlePrev}>

@@ -30,14 +30,14 @@ const MovieList: React.FC = () => {
 
     const handleNext = () => {
         setStartIndex((prev) => {
-            const nextIndex = prev + 7;
+            const nextIndex = prev + 3;
             return nextIndex >= movies.length ? 0 : nextIndex; // Loop back to the start
         });
     };
 
     const handlePrev = () => {
         setStartIndex((prev) => {
-            const prevIndex = prev - 7;
+            const prevIndex = prev - 3;
             return prevIndex < 0 ? movies.length - (movies.length % 7 || 7) : prevIndex; // Loop to the end
         });
     };

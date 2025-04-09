@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Box, IconButton, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom'; // 👉 thêm dòng này
 import '../styles/Movie.css'; 
 
 interface MovieProps {
@@ -17,9 +18,14 @@ interface MovieProps {
 
 const Movie: React.FC<MovieProps> = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate(); 
 
     const toggleModal = (open: boolean) => () => {
         setIsModalOpen(open);
+    };
+
+    const handleWatchNow = () => {
+        navigate(`/movie/${movie.id}`);
     };
 
     return (
@@ -61,6 +67,7 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
                         <Button 
                             variant="contained"
                             className="signup-button"
+                            onClick={handleWatchNow} 
                         >
                             ▶ Xem ngay
                         </Button>
