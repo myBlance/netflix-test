@@ -72,3 +72,6 @@
     color: rgb(255, 255, 255);
 }
   
+.view-more:hover {
+    color: #9b3e3e;
+}

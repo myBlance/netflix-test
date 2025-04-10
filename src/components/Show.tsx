@@ -28,7 +28,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
             <div
                 className="show-banner"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original/${show.backdrop_path})`,
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original/${show.backdrop_path})`,
                 }}
             >
                 <div className="show-overlay">
