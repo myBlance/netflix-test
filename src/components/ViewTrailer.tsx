@@ -45,7 +45,6 @@ const ViewTrailer: React.FC<ViewTrailerProps> = ({ id, type, open, onClose }) =>
                             height="90%"
                             src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
                             title="Trailer"
-                            frameBorder="0"
                             allow="autoplay; encrypted-media"
                             allowFullScreen
                         ></iframe>
