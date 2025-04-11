@@ -13,7 +13,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
 
     useEffect(() => {
         async function fetchShowDetails() {
-            const response = await axios.get(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=en-US`);
+            const response = await axios.get(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}`);
             setShow(response.data);
         }
         fetchShowDetails();
