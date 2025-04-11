@@ -35,9 +35,9 @@ const ViewTrailer: React.FC<ViewTrailerProps> = ({ id, type, open, onClose }) =>
     if (!open) return null;
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={onClose}>✖</button>
+        <div className="iframe-overlay" onClick={onClose}>
+            <div className="iframe-content" onClick={(e) => e.stopPropagation()}>
+                <button className="iframe-close" onClick={onClose}>✖</button>
                 {trailerKey ? (
                     <div className="video-wrapper">
                         <iframe
