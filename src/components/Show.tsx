@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import "../styles/Show.css";
+import ViewTrailer from "./ViewTrailer"; 
 
 interface ShowProps {
     id: number;
@@ -10,6 +11,8 @@ interface ShowProps {
 
 const Show: React.FC<ShowProps> = ({ id, type }) => {
     const [show, setShow] = useState<any>(null);
+    const [showTrailer, setShowTrailer] = useState(false);
+
 
     useEffect(() => {
         async function fetchShowDetails() {
@@ -85,12 +88,18 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                         </div>
                         <button 
                             className="play-trailer-button"
-                            // show trailer dạng Modal
+                            onClick={() => setShowTrailer(true)} // show trailer dạng Modal
                         >▶ Play Trailer
                         </button>
                     </div>
                 </div>
             </div>
+            <ViewTrailer
+                id={id}
+                type={type}
+                open={showTrailer}
+                onClose={() => setShowTrailer(false)}
+            />
         </div>
     );
 };
