@@ -11,12 +11,12 @@ const MovieDetail = () => {
     return (
         <div>
             <Navbar />
-            {numericId !== undefined && (
-                <>
-                    <Show id={numericId} type="movie" />
-                    <CastList movieId={numericId} />
-                </>
-            )}
+                {numericId !== undefined && (
+                    <>
+                        <Show id={numericId} type="movie" />
+                        <CastList movieId={numericId} />
+                    </>
+                )}
             <Footer />
         </div>
     );

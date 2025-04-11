@@ -1,0 +1,119 @@
+.person-info-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.person-info-main {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.person-left {
+    width: 300px;
+    margin: 20px;
+}
+
+.person-infor-content {
+    margin-top: 20px;
+}
+
+.person-infor-content p {
+    font-size: 16px;
+    text-align: left;
+    
+}
+
+.person-right {
+    flex: 1;
+}
+
+.person-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    color: #d85959;
+}
+
+.person-biography {
+    margin: 20px 10px 0;
+    max-width: 800px;
+}
+
+.biography-text {
+    margin-left: -10px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: justify;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+
+.person-acting h3 {
+    font-size: 22px;
+    text-align: left;
+    margin-left: 60px;
+}
+
+.person-acting {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: -10px -10px 20px rgba(206, 197, 197, 0.4);
+}
+
+.acting-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acting-item {
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+}
+
+.acting-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; 
+}
+
+.acting-year {
+    width: 60px;
+    font-weight: bold;
+    color: #fff;
+    flex-shrink: 0;
+    margin-left: 20px;
+    padding-top: 5px; 
+}
+
+.acting-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    text-align: left;
+}
+
+.acting-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.acting-title:hover {
+    color: #d85959
+}
+
+.acting-character {
+    font-size: 16px;
+    color: #ffffff;
+}

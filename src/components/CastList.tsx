@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import '../styles/CastList.css';
+import { useNavigate } from 'react-router-dom';
 
 interface CastMember {
     id: number;
@@ -16,6 +17,7 @@ interface Props {
 
 const CastList: React.FC<Props> = ({ movieId }) => {
     const [cast, setCast] = useState<CastMember[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchCast = async () => {
@@ -37,7 +39,11 @@ const CastList: React.FC<Props> = ({ movieId }) => {
             <h2 className="cast-title">Series Cast</h2>
             <div className="cast-list">
                 {cast.map((member) => (
-                    <div key={member.id} className="cast-card">
+                    <div 
+                        key={member.id} 
+                        className="cast-card"
+                        onClick={() => navigate(`/person/${member.id}`)}
+                    >
                         {member.profile_path ? (
                             <img
                                 src={`https://image.tmdb.org/t/p/w185${member.profile_path}`}
