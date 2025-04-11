@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_KEY, BASE_URL } from "../services/tmdb";
-import "../styles/ViewTrailer.css"; // Giả sử bạn sẽ viết CSS riêng cho modal ở đây
+import "../styles/ViewTrailer.css"; 
 
 interface ViewTrailerProps {
     id: number;
