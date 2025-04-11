@@ -63,7 +63,7 @@
     margin-top: 12px;
 }
 
-.signup-button {
+.watch-button {
     margin-top: 24px;
     background-color: #e32932;
     color: #fff;
@@ -73,6 +73,6 @@
     padding: 8px 32px;
 }
 
-.signup-button:hover {
+.watch-button:hover {
     background-color: #f40612;
 }

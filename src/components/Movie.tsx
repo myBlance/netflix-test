@@ -66,7 +66,7 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
                         <p className="movie-description">{movie.description}</p>
                         <Button 
                             variant="contained"
-                            className="signup-button"
+                            className="watch-button"
                             onClick={handleWatchNow} 
                         >
                             ▶ Xem ngay
