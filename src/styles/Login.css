@@ -17,7 +17,7 @@
     background-color: rgba(0, 0, 0, 0.75);
     padding: 60px 68px 40px;
     border-radius: 4px;
-    max-width: 450px; /* nên dùng thay vì % để ổn định trên các màn hình */
+    max-width: 450px; 
     box-sizing: border-box;
 }
   
