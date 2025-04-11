@@ -41,12 +41,17 @@
 }
 
 .person-biography {
-    margin: 20px 10px 0;
-    max-width: 800px;
+    
+}
+
+strong {
+    color: #d85959;
+    font-size: 18px;
 }
 
 .biography-text {
     margin-left: -10px;
+    margin-top: -20px;
     font-size: 16px;
     line-height: 1.8;
     color: #ffffff;
@@ -54,6 +59,7 @@
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    
 }
 
 
@@ -64,6 +70,7 @@
 }
 
 .person-acting {
+    margin: 40px 40px 40px 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: -10px -10px 20px rgba(206, 197, 197, 0.4);
