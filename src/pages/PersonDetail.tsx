@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import PersonInfo from "../components/PersonInfo";
+import PersonInfo from "../components/PersonInfor";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 
 const PersonDetail = () => {
