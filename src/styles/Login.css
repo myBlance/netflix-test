@@ -1,6 +1,6 @@
 .login {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../assets/the_netflix_login_background.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -17,7 +17,6 @@
     background-color: rgba(0, 0, 0, 0.75);
     padding: 60px 68px 40px;
     border-radius: 4px;
-    width: 100%;
     max-width: 450px; /* nên dùng thay vì % để ổn định trên các màn hình */
     box-sizing: border-box;
 }
@@ -28,13 +27,13 @@
 }
   
 .login-container input {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     margin-bottom: 16px;
     background: #333;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #fff;
 }
   
 .btn-login {
@@ -43,7 +42,7 @@
     background-color: #e50914;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 16px;
@@ -51,7 +50,7 @@
   
 .divider {
     text-align: center;
-    color: gray;
+    color: #666;
     margin: 10px 0;
 }
   
@@ -61,13 +60,13 @@
     background-color: #666;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #fff;
     margin-bottom: 10px;
     cursor: pointer;
 }
   
 .forgot-password {
-    color: white;
+    color: #fff;
     font-size: 14px;
     text-decoration: underline;
     display: block;
@@ -84,14 +83,14 @@
 }
   
 .signup-text a {
-    color: white;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
 }
   
 .captcha-note {
     font-size: 12px;
-    color: gray;
+    color: #666;
     margin-top: 20px;
 }
   
