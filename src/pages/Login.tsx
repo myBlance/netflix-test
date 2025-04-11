@@ -1,27 +1,34 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
+import "../styles/Login.css";
 
 const Login = () => {
     
     return (
-        <div>
-            <Navbar />
+        <div className="login">
             <div className="login-container">
-                <h1>Login</h1>
+                <h2>Đăng nhập</h2>
                 <form>
-                    <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" id="username" name="username" required />
+                    <input type="email" placeholder="Email hoặc số điện thoại di động" required />
+                    <input type="password" placeholder="Mật khẩu" required />
+                    <button className="btn-login">Đăng nhập</button>
+                    <div className="divider">HOẶC</div>
+                    <button className="btn-code">Sử dụng mã đăng nhập</button>
+                    <a href="#" className="forgot-password">Bạn quên mật khẩu?</a>
+
+                    <div className="remember-me">
+                        <label>
+                            <input type="checkbox"  /> Ghi nhớ tôi
+                        </label>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password" required />
-                    </div>
-                    <button type="submit">Login</button>
+
+                    <p className="signup-text">Bạn mới sử dụng Netflix? 
+                        <a href="#">Đăng ký ngay.</a>
+                    </p>
+
+                    <p className="captcha-note">Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot.
+                        <a href="#">Tìm hiểu thêm.</a>
+                    </p>
                 </form>
             </div>
-            <Footer />
         </div>
     )
 };
