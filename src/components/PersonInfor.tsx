@@ -14,6 +14,14 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
         return Math.abs(ageDate.getUTCFullYear() - 1970);
     };
 
+
+    const groupedByYear: Record<string, any[]> = person.combined_credits.cast.reduce((acc: any, movie: any) => {
+        const year = movie.release_date?.substring(0, 4) || "—";
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(movie);
+        return acc;
+    }, {});
+    
     return (
         <div className="person-info-container">
             <div className="person-info-main">
@@ -48,35 +56,46 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                             </div>
                             <div className="person-acting">
                                 <h3>Acting</h3>
-                                <ul className="acting-list">
-                                    {person.combined_credits.cast
-                                        .sort((a: any, b: any) => (b.release_date || '').localeCompare(a.release_date || ''))
-                                        .map((movie: any, index: number) => (
-                                            <li key={index} className="acting-item">
-                                                <div className="acting-row">
-                                                    <div className="acting-year">
-                                                        {movie.release_date?.substring(0, 4) || "—"}
-                                                    </div>
-                                                    <div className="acting-info">
-                                                        <span className="acting-title">
-                                                            <Link to={`/movie/${movie.id}`} className="acting-title">
-                                                                {movie.title || movie.name}
-                                                            </Link>
-                                                        </span>
-                                                        <span className="acting-character">as {movie.character || "—"}</span>
-                                                    </div>
+
+                                {Object.entries(groupedByYear)
+                                    .sort(([yearA], [yearB]) => yearB.localeCompare(yearA))
+                                    .map(([year, movies]) => (
+                                        
+                                        <div key={year} className="acting-year-group">
+                                            <div className="acting-row-group">
+                                                <div className="acting-year">
+                                                    <h4>{year}</h4>
                                                 </div>
-                                            </li>
-                                        ))}
-                                </ul>
+                                                <div className="acting-movie-list">
+                                                    <ul className="acting-list">
+                                                        {movies.map((movie: any, index: number) => (
+                                                            <li key={index} className="acting-item">
+                                                                <div className="acting-info">
+                                                                    <span className="acting-title">
+                                                                        <Link to={`/movie/${movie.id}`}>
+                                                                            {movie.title || movie.name}
+                                                                        </Link>
+                                                                    </span>
+                                                                    <span className="acting-character">
+                                                                        <span className="acting-character">
+                                                                            as <span style={{ color: "#d85959" }}>{movie.character || "—"}</span>
+                                                                        </span>
+                                                                    </span>
+                                                                </div>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>                               
+                                    ))}
                             </div>
                         </div>
                     )}
                 </div>
             </div>
         </div>
-    );
-    
+    );    
 };
 
 export default PersonInfo;

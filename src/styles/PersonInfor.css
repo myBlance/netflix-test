@@ -40,9 +40,6 @@
     color: #d85959;
 }
 
-.person-biography {
-    
-}
 
 strong {
     color: #d85959;
@@ -76,6 +73,35 @@ strong {
     box-shadow: -10px -10px 20px rgba(206, 197, 197, 0.4);
 }
 
+.acting-year-group {
+    margin-bottom: 24px;
+    border-top: 1px solid #eee;
+}
+
+.acting-row-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Năm bên trái */
+.acting-year {
+    min-width: 80px;
+    text-align: right;
+    margin: 25px 15px 0;
+}
+
+.acting-year h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Danh sách phim bên phải */
+.acting-movie-list {
+    flex: 1;
+    padding: 12px;
+}
+
 .acting-list {
     list-style: none;
     padding: 0;
@@ -83,44 +109,27 @@ strong {
 }
 
 .acting-item {
-    padding: 12px 0;
-    border-top: 1px solid #eee;
-}
-
-.acting-row {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start; 
-}
-
-.acting-year {
-    width: 60px;
-    font-weight: bold;
-    color: #fff;
-    flex-shrink: 0;
-    margin-left: 20px;
-    padding-top: 5px; 
-}
-
-.acting-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
+    margin-bottom: 8px;
     text-align: left;
+    padding-left: 15px;
+    border-left: 1px solid #eee;
 }
 
-.acting-title {
-    font-size: 18px;
-    font-weight: 600;
+.acting-title a {
+    font-weight: 500;
+    font-size: 20px;
     color: #fff;
-    margin-bottom: 4px;
+    text-decoration: none;
 }
 
-.acting-title:hover {
-    color: #d85959
+.acting-title a:hover {
+    text-decoration: underline;
+    color: #3b26f5;
 }
 
 .acting-character {
-    font-size: 16px;
-    color: #ffffff;
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-top: 2px;
 }
