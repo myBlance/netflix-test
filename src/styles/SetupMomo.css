@@ -1,0 +1,102 @@
+.payMomo {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.momo-container {
+    background-color: #fff;
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+.step-label {
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+  
+.step-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+.momo-icon {
+    width: 28px;
+    height: 28px;
+}
+  
+.subtext {
+    font-size: 14px;
+    color: #555;
+}
+  
+.phone-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #a7a7a7;
+    border-radius: 2px;
+    gap: 8px;
+    margin: 16px 0;
+}
+  
+.flag {
+    white-space: nowrap;
+    padding: 0 8px;
+    font-weight: bold;
+}
+  
+.plan-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3f3f3;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+  
+.plan-info strong {
+    color: #000;
+}
+
+.plan-type {
+    font-size: 14px;
+    color: #777;
+}
+  
+.change-btn {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #0071eb;
+    cursor: pointer;
+}
+  
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+  
+.start-btn {
+    background-color: #e50914 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 12px !important;
+    margin-bottom: 16px !important;
+}
+  
+.note {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+}
+  

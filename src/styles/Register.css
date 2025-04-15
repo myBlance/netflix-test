@@ -166,7 +166,7 @@
 }
 
 .step2-card Strong {
-    font-size: 14px;
+    font-size: 12px;
     color: #828282;
 }
   
@@ -191,7 +191,7 @@
 .step2-card.premium::before {
     content: 'Most Popular';
     position: absolute;
-    top: -20px;
+    top: -16px;
     left: 0;
     right: 0;
     background: #5f5f5f;
@@ -241,6 +241,7 @@
 }
 
 .end-to-end {
+    margin-left: 70%;
     text-align: left;
     font-size: 12px;
     color: #5f5f5f;
@@ -252,5 +253,9 @@
     color: #000;
     text-transform: none;
     justify-content: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 10px;   
+}
+
+.step3-button Button img {
+    width: 40px;
 }

@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import { useNavigate } from "react-router-dom";
 
 interface StepThreeProps {
   label: string;
@@ -10,6 +11,15 @@ interface StepThreeProps {
 }
 
 const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
+    const navigate = useNavigate(); 
+
+    const handlePayVisa = () => {
+        navigate(`/src/pages/PayMoney/Visa.tsx`);
+    };
+    const handlePayMomo = () => {
+        navigate(`/Momo`);
+    };
+
     return (
         <div className="step3-container">
             <div className='look-icon'>
@@ -30,25 +40,27 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                 <Button
                     variant="outlined"
                     fullWidth
+                    onClick={() => handlePayVisa()}
                     startIcon={<CreditCardIcon />}
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Credit or Debit Card</span>
-                        
-                        <img src="/src/assets/visa.png" alt="Visa" width={40} style={{ marginRight: 4 }} />
-                        <img src="/src/assets/visa.png" alt="MasterCard" width={40} style={{ marginRight: 4 }} />
-                        <img src="/src/assets/visa.png" alt="Amex" width={40} />
+                        <img src="/src/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
+                        <img src="/src/assets/visa.png" alt="MasterCard"  style={{ marginRight: 4 }} />
+                        <img src="/src/assets/visa.png" alt="Amex" />
                     </div>
                 </Button>
 
                 <Button
                     variant="outlined"
                     fullWidth
+                    
+                    onClick={handlePayMomo}
                     startIcon={<AccountBalanceWalletIcon />}
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Digital Wallet</span>
-                        <img src="/src/assets/visa.png" alt="MoMo" width={30} />
+                        <img src="/src/assets/visa.png" alt="MoMo"/>
                     </div>
                 </Button>
             </div>
