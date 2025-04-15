@@ -49,27 +49,40 @@ const MovieList: React.FC = () => {
                 <button className="prev-button" onClick={handlePrev}>
                     <ArrowBackIosNewIcon />
                 </button>
-                <div className="movie-grid">
-                    {movies.slice(startIndex, startIndex + 7).map((movie) => (
-                        <Movie
-                            key={movie.id}
-                            movie={{
-                                id: movie.id,
-                                title: movie.title,
-                                description: movie.overview,
-                                posterPath: movie.poster_path,
-                                year: movie.release_date ? movie.release_date.split("-")[0] : "Unknown", 
-                                genres: movie.genre_ids ? movie.genre_ids.map(String) : [], 
-                                rating: movie.vote_average ? movie.vote_average.toString() : "N/A", 
-                            }}
-                        />
-                    ))}
+
+                <div className="movie-slider-wrapper">
+                    <div
+                        className="movie-slider"
+                        style={{
+                            transform: `translateX(-${startIndex * (100 / 7)}%)`,
+                            transition: "transform 0.5s ease-in-out",
+                            width: `${(movies.length * 43) / 7}%`, // để đủ độ dài trượt
+                        }}
+                    >
+                        {movies.map((movie) => (
+                            <div className="movie-slide" key={movie.id}>
+                                <Movie
+                                    movie={{
+                                        id: movie.id,
+                                        title: movie.title,
+                                        description: movie.overview,
+                                        posterPath: movie.poster_path,
+                                        year: movie.release_date ? movie.release_date.split("-")[0] : "Unknown",
+                                        genres: movie.genre_ids ? movie.genre_ids.map(String) : [],
+                                        rating: movie.vote_average ? movie.vote_average.toString() : "N/A",
+                                    }}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
                 <button className="next-button" onClick={handleNext}>
                     <ArrowForwardIosIcon />
                 </button>
             </div>
         </div>
+
     );
 };
 

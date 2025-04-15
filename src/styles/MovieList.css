@@ -18,13 +18,28 @@
     gap: 10px;
 }
 
-.movie-grid {
-    padding: 40px 0;
-    display: flex;
-    gap: 20px;
+.movie-slider-wrapper {
     overflow: hidden;
-    flex-wrap: nowrap;
-    width: calc(7 * 200px); 
+    flex: 1;
+}
+
+.movie-slider {
+    display: flex;
+    padding: 40px 0;
+    gap: 18px;
+    width: calc(7 * 200px);
+}
+
+.movie-slide {
+    width: calc(100% / 7);
+    flex-shrink: 0;
+    padding: 0 8px; /* khoảng cách giữa các phim */
+    box-sizing: border-box;
+}
+
+
+.movie-item {
+    width: 150px;
 }
 
 .movie-item img {
@@ -53,3 +68,6 @@
 .next-button:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
+
+
+
