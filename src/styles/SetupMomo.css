@@ -12,14 +12,14 @@
     font-family: Arial, sans-serif;
   }
   
-.step-label {
+.pay-label {
     color: #888;
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 8px;
 }
   
-.step-title {
+.pay-title {
     display: flex;
     align-items: center;
     font-size: 24px;

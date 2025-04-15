@@ -12,8 +12,8 @@ const SetupMomo: React.FC = () => {
   return (
     <div className='payMomo'>
         <div className="momo-container">
-            <div className="step-label">STEP 3 OF 3</div>
-            <h2 className="step-title">
+            <div className="pay-label">STEP 3 OF 3</div>
+            <h2 className="pay-title">
                 Set up MoMo
             </h2>
 
