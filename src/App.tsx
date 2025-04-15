@@ -4,6 +4,8 @@ import './App.css';
 import MovieDetail from "./pages/MovieDetail";
 import Login from "./pages/Login";
 import PersonDetail from "./pages/PersonDetail";
+import Register from "./pages/Register";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/person/:id" element={<PersonDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </Router>
   );
