@@ -1,0 +1,108 @@
+.setupCard {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+  
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.step-label {
+    color: #000000;
+}
+  
+.title {
+    font-size: 32px;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+  
+.logo-container .logo {
+    width: 35px;
+    height: 27px;
+    margin: 0 10px 0 0;
+}
+  
+.input-field {
+    margin-top: 20px;
+}
+
+.input-fields-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+    
+  }
+  
+.card-input {
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: white;
+}
+  
+.plan-info {
+    background-color: #f3f3f3;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    border-radius: 4px;
+}
+
+.plan-info strong {
+    color: #000;
+}
+  
+.plan-type {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+  
+.change-btn {
+    background: none;
+    border: none;
+    color: #0071eb;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.terms-agreement {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 20px;
+}
+  
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+  
+.start-btn {
+    background-color: #e50914;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    padding: 12px;
+    border-radius: 4px;
+}
+  
+.note {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 12px;
+}
+  

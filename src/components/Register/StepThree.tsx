@@ -14,7 +14,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
     const navigate = useNavigate(); 
 
     const handlePayVisa = () => {
-        navigate(`/src/pages/PayMoney/Visa.tsx`);
+        navigate(`/Visa`);
     };
     const handlePayMomo = () => {
         navigate(`/Momo`);
@@ -46,8 +46,8 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Credit or Debit Card</span>
                         <img src="/src/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
-                        <img src="/src/assets/visa.png" alt="MasterCard"  style={{ marginRight: 4 }} />
-                        <img src="/src/assets/visa.png" alt="Amex" />
+                        <img src="/src/assets/mastercard.png" alt="MasterCard"  style={{ marginRight: 4 }} />
+                        <img src="/src/assets/amex.png" alt="Amex" />
                     </div>
                 </Button>
 
@@ -60,7 +60,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Digital Wallet</span>
-                        <img src="/src/assets/visa.png" alt="MoMo"/>
+                        <img src="/src/assets/momo.png" alt="MoMo"/>
                     </div>
                 </Button>
             </div>

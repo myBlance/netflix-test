@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import PersonDetail from "./pages/PersonDetail";
 import Register from "./pages/Register";
 import SetupMomo from "./pages/PayMoney/Momo";
+import SetupVisa from "./pages/PayMoney/Visa";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Momo" element={<SetupMomo />} />
+        <Route path="/Visa" element={<SetupVisa />} />
       </Routes>
     </Router>
   );
