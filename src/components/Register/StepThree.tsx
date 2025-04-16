@@ -4,6 +4,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import { useNavigate } from "react-router-dom";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface StepThreeProps {
   label: string;
@@ -42,6 +43,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                     fullWidth
                     onClick={() => handlePayVisa()}
                     startIcon={<CreditCardIcon />}
+                    endIcon={< ArrowForwardIosIcon sx={{ml:"119px"}}/>}
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Credit or Debit Card</span>
@@ -57,6 +59,8 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                     
                     onClick={handlePayMomo}
                     startIcon={<AccountBalanceWalletIcon />}
+                    endIcon={< ArrowForwardIosIcon sx={{ml:"242px"}}/>}
+
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Digital Wallet</span>

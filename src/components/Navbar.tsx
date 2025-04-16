@@ -11,6 +11,9 @@ const Navbar: React.FC = () => {
                 <img src="/src/assets/netflix.svg" alt="Netflix Logo" className="logo" />
             </Link>
             <div className="nav-links">
+                <Link to="/qrpay" className="nav-link">
+                    Thanh toán
+                </Link>
                 <Link to="/register" className="nav-link">
                     Đăng ký
                 </Link>

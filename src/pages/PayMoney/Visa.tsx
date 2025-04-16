@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
-import { TextField } from '@mui/material';
-import { Checkbox, Button, Dialog, DialogActions, DialogContent, DialogTitle, List, ListItemText } from '@mui/material';
+import { 
+    TextField,
+    Checkbox, 
+    Button, 
+    Dialog, 
+    DialogActions, 
+    DialogContent, 
+    DialogTitle, 
+    List, 
+    ListItemText 
+} from '@mui/material';
 import '../../styles/SetupVisa.css';
 
 const plans = [

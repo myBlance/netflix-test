@@ -1,0 +1,27 @@
+.qrpay {
+    background-color: #fff;
+    height: 100vh;
+    justify-items: center;
+    padding: 40px;
+}
+
+.qrpay-container {
+    width: 600px;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.qrpay-title h1 {
+    margin: 0;
+    padding-top: 0;
+}
+
+.qrpay-container Button {
+    margin-top: 30px;
+}
+
+.qrcode {
+    width: 70%;
+}

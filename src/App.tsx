@@ -7,6 +7,7 @@ import PersonDetail from "./pages/PersonDetail";
 import Register from "./pages/Register";
 import SetupMomo from "./pages/PayMoney/Momo";
 import SetupVisa from "./pages/PayMoney/Visa";
+import QrPay from "./pages/QrPay/QrPay";
 
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/person/:id" element={<PersonDetail />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Momo" element={<SetupMomo />} />
-        <Route path="/Visa" element={<SetupVisa />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/momo" element={<SetupMomo />} />
+        <Route path="/visa" element={<SetupVisa />} />
+        <Route path="/qrpay" element={<QrPay/>} />
       </Routes>
     </Router>
   );
