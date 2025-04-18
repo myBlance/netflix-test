@@ -1,31 +1,44 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Button } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 import '../../styles/QrPay.css';
 
 const QrPay = () => {
     const [qrCode, setQrCode] = useState<string | null>(null);
     const [orderId, setOrderId] = useState<string | null>(null);
     const [payStatus, setPayStatus] = useState<'Unpaid' | 'Paid'>('Unpaid');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const handleOrder = async () => {
-        const res = await axios.post('http://localhost:4000/api/create-order', {
-            name: 'Nguyen Van A',
-            amount: 2000,
-        });
+        setLoading(true);
+        try {
+            const res = await axios.post('/api/create-order', {
+                name: 'Nguyen Van A',
+                amount: 2000,
+            });
 
-        setQrCode(res.data.qrUrl);
-        setOrderId(res.data.orderId);
-        setPayStatus('Unpaid');
+            setQrCode(res.data.qrUrl);
+            setOrderId(res.data.orderId);
+            setPayStatus('Unpaid');
+        } catch (err) {
+            // Kiểm tra kiểu lỗi và xử lý tương ứng
+            if (axios.isAxiosError(err)) {
+                console.error('Lỗi từ Axios:', err.response?.data || err.message);
+            } else {
+                console.error('Lỗi không xác định:', err);
+            }
+        } finally {
+            setLoading(false);
+        }
     };
 
-    // Kiểm tra trạng thái đơn hàng mỗi giây
+    // Kiểm tra trạng thái đơn hàng mỗi 1 giây
     useEffect(() => {
         if (!orderId || payStatus === 'Paid') return;
 
         const interval = setInterval(async () => {
             try {
-                const res = await axios.post('http://localhost:4000/api/check-payment-status', {
+                const res = await axios.post('/api/check-payment-status', {
                     orderId,
                 });
 
@@ -33,9 +46,14 @@ const QrPay = () => {
                     setPayStatus('Paid');
                 }
             } catch (error) {
-                console.error('Lỗi kiểm tra thanh toán:', error);
+                // Kiểm tra kiểu lỗi và xử lý tương ứng
+                if (axios.isAxiosError(error)) {
+                    console.error('Lỗi từ Axios:', error.response?.data || error.message);
+                } else {
+                    console.error('Lỗi không xác định:', error);
+                }
             }
-        }, 1000);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, [orderId, payStatus]);
@@ -52,8 +70,9 @@ const QrPay = () => {
                     variant="contained"
                     color="primary"
                     onClick={handleOrder}
+                    disabled={loading}
                 >
-                    Tạo QR Code thanh toán
+                    {loading ? <CircularProgress size={24} color="inherit" /> : 'Tạo QR Code thanh toán'}
                 </Button>
 
                 <div className='qrpay-content'>
@@ -71,8 +90,8 @@ const QrPay = () => {
 
                     {payStatus === 'Paid' && (
                         <div className="success-box">
-                        <h3>✅ Thanh toán thành công!</h3>
-                        <p>Cảm ơn bạn đã sử dụng dịch vụ.</p>
+                            <h3>✅ Thanh toán thành công!</h3>
+                            <p>Cảm ơn bạn đã sử dụng dịch vụ.</p>
                         </div>
                     )}
                 </div>
