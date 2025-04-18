@@ -32,7 +32,7 @@ const QrPay = () => {
         }
     };
 
-    // Kiểm tra trạng thái đơn hàng mỗi 1 giây
+    // Kiểm tra trạng thái đơn hàng mỗi 3 giây
     useEffect(() => {
         if (!orderId || payStatus === 'Paid') return;
 
