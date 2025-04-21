@@ -25,3 +25,9 @@
 .qrcode {
     width: 70%;
 }
+
+.status {
+    font-style: italic;
+    margin-top: 8px;
+    color: #333;
+}

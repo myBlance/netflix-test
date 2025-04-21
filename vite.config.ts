@@ -8,7 +8,7 @@ export default defineConfig({
   },
   server: {
     allowedHosts: [
-      '848d-2402-9d80-227-e3be-d18c-d5f9-c085-7854.ngrok-free.app', // ✅ Không có http:// ngrok http 5173
+      'aa66-2402-9d80-227-e3be-2044-2d88-d6c8-775c.ngrok-free.app', // ✅ Không có http:// ngrok http 5173
       'localhost',
     ],
     proxy: {

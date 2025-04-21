@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, CircularProgress } from '@mui/material';
+import { io } from 'socket.io-client';
+import { Link } from "react-router-dom";
 import '../../styles/QrPay.css';
+
+// URL này trỏ tới Socket Server
+const socket = io('http://localhost:4000');
 
 const QrPay = () => {
     const [qrCode, setQrCode] = useState<string | null>(null);
@@ -31,32 +36,32 @@ const QrPay = () => {
         }
     };
 
+    //  Kết nối socket theo orderId
     useEffect(() => {
         if (!orderId || payStatus === 'Paid') return;
 
-        const interval = setInterval(async () => {
-            try {
-                const res = await axios.post('/api/check-payment-status', { orderId });
+        socket.emit('join_order', orderId); // Tham gia theo orderId
 
-                if (res.data.status === 'Paid') {
-                    setPayStatus('Paid');
-                }
-            } catch (error) {
-                if (axios.isAxiosError(error)) {
-                    console.error('Lỗi từ Axios:', error.response?.data || error.message);
-                } else {
-                    console.error('Lỗi không xác định:', error);
-                }
+        const handlePaid = (data: any) => {
+            if (data.orderId === orderId) {
+                setPayStatus('Paid');
             }
-        }, 3000);
+        };
 
-        return () => clearInterval(interval);
+        socket.on('order_paid', handlePaid);
+
+        return () => {
+            socket.emit('leave_order', orderId);
+            socket.off('order_paid', handlePaid);
+        };
     }, [orderId, payStatus]);
 
     return (
         <div className='qrpay'>
             <div className='qrpay-container'>
-                <img src="/src/assets/netflix.svg" alt="Netflix Logo" className="logo" />
+                <Link to="/" className="logo-link">
+                    <img src="/src/assets/netflix.svg" alt="Netflix Logo" className="logo" />
+                </Link>
                 <div className='qrpay-title'>
                     <h2>Thanh toán bằng QR Code</h2>
                     <p>Vui lòng nhấn nút bên dưới để tạo mã QR thanh toán.</p>
@@ -75,6 +80,7 @@ const QrPay = () => {
                         <>
                             <p>Vui lòng quét mã QR để thanh toán:</p>
                             <img src={qrCode} alt="QR SePay" className='qrcode' />
+                            <p className='status'>Trạng thái: Chờ thanh toán...</p>
                             <div className='order-id'>
                                 <p>Order ID: {orderId}</p>
                             </div>
