@@ -21,7 +21,6 @@ const QrPay = () => {
             setOrderId(res.data.orderId);
             setPayStatus('Unpaid');
         } catch (err) {
-            // Kiểm tra kiểu lỗi và xử lý tương ứng
             if (axios.isAxiosError(err)) {
                 console.error('Lỗi từ Axios:', err.response?.data || err.message);
             } else {
@@ -32,21 +31,17 @@ const QrPay = () => {
         }
     };
 
-    // Kiểm tra trạng thái đơn hàng mỗi 3 giây
     useEffect(() => {
         if (!orderId || payStatus === 'Paid') return;
 
         const interval = setInterval(async () => {
             try {
-                const res = await axios.post('/api/check-payment-status', {
-                    orderId,
-                });
+                const res = await axios.post('/api/check-payment-status', { orderId });
 
-                if (res.data.payment_status === 'Paid') {
+                if (res.data.status === 'Paid') {
                     setPayStatus('Paid');
                 }
             } catch (error) {
-                // Kiểm tra kiểu lỗi và xử lý tương ứng
                 if (axios.isAxiosError(error)) {
                     console.error('Lỗi từ Axios:', error.response?.data || error.message);
                 } else {
@@ -78,10 +73,8 @@ const QrPay = () => {
                 <div className='qrpay-content'>
                     {qrCode && payStatus === 'Unpaid' && (
                         <>
-                            <div>
-                                <p>Vui lòng quét mã QR để thanh toán:</p>
-                                <img src={qrCode} alt="QR SePay" className='qrcode' />
-                            </div>
+                            <p>Vui lòng quét mã QR để thanh toán:</p>
+                            <img src={qrCode} alt="QR SePay" className='qrcode' />
                             <div className='order-id'>
                                 <p>Order ID: {orderId}</p>
                             </div>

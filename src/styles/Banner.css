@@ -74,3 +74,42 @@
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
+@media (max-width: 768px) {
+  .banner {
+    height: 400px;
+    margin: 0 10px;
+    border-radius: 20px;
+  }
+
+  .banner-content {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 50px;
+    transform: translateY(0);
+    text-align: center;
+  }
+
+  .banner-content h1 {
+    font-size: 20px;
+  }
+
+  .play-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .banner-controls {
+    top: auto;
+    bottom: 10px;
+    justify-content: space-around;
+    transform: none;
+  }
+
+  .prev-button,
+  .next-button {
+    font-size: 18px;
+    padding: 8px 12px;
+    margin: 0;
+  }
+}
