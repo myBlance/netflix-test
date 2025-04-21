@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Button, CircularProgress } from '@mui/material';
+import { Button, CircularProgress, Box } from '@mui/material';
 import { io } from 'socket.io-client';
 import { Link } from "react-router-dom";
 import '../../styles/QrPay.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 // URL này trỏ tới Socket Server
 const socket = io('http://localhost:4000');
@@ -36,6 +37,47 @@ const QrPay = () => {
         }
     };
 
+    //  Lắng nghe sự kiện thanh toán từ server và hiển thị thông báo
+    useEffect(() => {
+        if (payStatus === 'Unpaid') {
+            toast.info(
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <svg width={0} height={0}>
+                        <defs>
+                            <linearGradient id="my_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#e01cd5" />
+                                <stop offset="100%" stopColor="#1CB5E0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>Chờ thanh toán...</span>
+                        <CircularProgress
+                            size={28}
+                            thickness={4}
+                            sx={{
+                                'svg circle': {
+                                    stroke: 'url(#my_gradient)',
+                                },
+                            }}
+                        />
+                </Box>,
+                {
+                    position: "top-right",
+                    autoClose: false,
+                    closeOnClick: false,
+                    draggable: false,
+                    closeButton: false,
+                    toastId: 'waiting-toast',
+                }
+            );
+        } else if (payStatus === 'Paid') {
+            toast.dismiss('waiting-toast'); 
+            toast.success('Thanh toán thành công!', {
+                position: "top-right",
+            });
+        }
+    }, [payStatus]);
+
     //  Kết nối socket theo orderId
     useEffect(() => {
         if (!orderId || payStatus === 'Paid') return;
@@ -58,6 +100,7 @@ const QrPay = () => {
 
     return (
         <div className='qrpay'>
+            <ToastContainer position="top-right" />
             <div className='qrpay-container'>
                 <Link to="/" className="logo-link">
                     <img src="/src/assets/netflix.svg" alt="Netflix Logo" className="logo" />
@@ -80,14 +123,14 @@ const QrPay = () => {
                         <>
                             <p>Vui lòng quét mã QR để thanh toán:</p>
                             <img src={qrCode} alt="QR SePay" className='qrcode' />
-                            <p className='status'>Trạng thái: Chờ thanh toán...</p>
+                            
                             <div className='order-id'>
                                 <p>Order ID: {orderId}</p>
                             </div>
                         </>
                     )}
 
-                    {payStatus === 'Paid' && (
+                    {payStatus === 'Paid' && (                       
                         <div className="success-box">
                             <h3>✅ Thanh toán thành công!</h3>
                             <p>Cảm ơn bạn đã sử dụng dịch vụ.</p>
