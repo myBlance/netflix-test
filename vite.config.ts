@@ -3,14 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  define: {
-    'process.env': process.env
-  },
   server: {
-    allowedHosts: [
-      '6057-2402-9d80-24a-37ed-7d1c-c3ca-b251-6b6b.ngrok-free.app', // ✅ Không có http:// ngrok http 5173
-      'localhost',
-    ],
     proxy: {
       '/api': {
         target: 'http://localhost:4000',
