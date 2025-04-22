@@ -5,9 +5,13 @@ import { io } from 'socket.io-client';
 import { Link } from "react-router-dom";
 import '../../styles/QrPay.css';
 import { toast, ToastContainer } from 'react-toastify';
+import axiosClient from '../../services/axiosClient';
+
+
+
 
 // URL này trỏ tới Socket Server
-const socket = io('http://localhost:4000');
+const socket = io(import.meta.env.VITE_SOCKET_URL);
 
 const QrPay = () => {
     const [qrCode, setQrCode] = useState<string | null>(null);
@@ -18,14 +22,10 @@ const QrPay = () => {
     const handleOrder = async () => {
         setLoading(true);
         try {
-            const res = await axios.post('/api/create-order', {
-                name: 'Nguyen Van A',
-                amount: 2000,
-            });
-
-            setQrCode(res.data.qrUrl);
-            setOrderId(res.data.orderId);
-            setPayStatus('Unpaid');
+            const res = await axiosClient.post('/create-order', { name: 'Nguyen Van A', amount: 2000 });
+                setQrCode(res.data.qrUrl);
+                setOrderId(res.data.orderId);
+                setPayStatus('Unpaid');
         } catch (err) {
             if (axios.isAxiosError(err)) {
                 console.error('Lỗi từ Axios:', err.response?.data || err.message);
