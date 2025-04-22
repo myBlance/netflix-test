@@ -47,9 +47,9 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Credit or Debit Card</span>
-                        <img src="/src/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
-                        <img src="/src/assets/mastercard.png" alt="MasterCard"  style={{ marginRight: 4 }} />
-                        <img src="/src/assets/amex.png" alt="Amex" />
+                        <img src="/public/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
+                        <img src="/public/assets/mastercard.png" alt="MasterCard"  style={{ marginRight: 4 }} />
+                        <img src="/public/assets/amex.png" alt="Amex" />
                     </div>
                 </Button>
 
@@ -64,7 +64,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Digital Wallet</span>
-                        <img src="/src/assets/momo.png" alt="MoMo"/>
+                        <img src="/public/assets/momo.png" alt="MoMo"/>
                     </div>
                 </Button>
             </div>
