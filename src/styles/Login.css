@@ -1,7 +1,7 @@
 .login {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/public/assets/the_netflix_login_background.jpg') no-repeat center center fixed;
+        url('/assets/the_netflix_login_background.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     color: #fff; 

@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="navbar">
             <Link to="/" className="logo-link">
-                <img src="/public/assets/netflix.svg" alt="Netflix Logo" className="logo" />
+                <img src="/assets/netflix.svg" alt="Netflix Logo" className="logo" />
             </Link>
             <div className="nav-links">
                 <Link to="/qrpay" className="nav-link">
