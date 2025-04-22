@@ -23,7 +23,7 @@ const CastList: React.FC<Props> = ({ movieId }) => {
         const fetchCast = async () => {
             try {
                 const response = await axios.get(
-                    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
+                    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=vi`
                 );
                 setCast(response.data.cast.slice(0, 8 )); 
             } catch (error) {
@@ -36,7 +36,7 @@ const CastList: React.FC<Props> = ({ movieId }) => {
 
     return (
         <div className="cast-section">
-            <h2 className="cast-title">Series Cast</h2>
+            <h2 className="cast-title">Diễn viên trong phim</h2>
             <div className="cast-list">
                 {cast.map((member) => (
                     <div 
@@ -60,7 +60,7 @@ const CastList: React.FC<Props> = ({ movieId }) => {
                     </div>
                 ))}
                 <div className="cast-viewmore">
-                    <a href={`/movie/${movieId}/cast`} className="view-more">View More →</a>
+                    <a href={`/movie/${movieId}/cast`} className="view-more">Xem thêm →</a>
                 </div>
             </div>
         </div>

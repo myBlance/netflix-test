@@ -12,56 +12,56 @@ import StepTwo from '../components/Register/StepTwo';
 import StepThree from '../components/Register/StepThree';
 
 const steps = [
-  {
-    label: 'Choose your plan.',
-  },
-  {
-    label: 'Choose the plan that’s right for you.',
-    plans: [
-      {
-        name: 'Mobile',
-        resolution: '480p',
-        price: '70,000 ₫',
-        quality: 'Fair',
-        devices: 'Mobile phone, tablet',
-        watch: 1,
-        download: 1,
-      },
-      {
-        name: 'Basic',
-        resolution: '720p (HD)',
-        price: '108,000 ₫',
-        quality: 'Good',
-        devices: 'TV, computer, mobile phone, tablet',
-        watch: 1,
-        download: 1,
-      },
-      {
-        name: 'Standard',
-        resolution: '1080p (Full HD)',
-        price: '220,000 ₫',
-        quality: 'Great',
-        devices: 'TV, computer, mobile phone, tablet',
-        watch: 2,
-        download: 2,
-      },
-      {
-        name: 'Premium',
-        resolution: '4K (Ultra HD) + HDR',
-        price: '260,000 ₫',
-        quality: 'Best',
-        spatialAudio: true,
-        devices: 'TV, computer, mobile phone, tablet',
-        watch: 4,
-        download: 6,
-      },
-    ],
-  },
-  {
-    label: 'Choose how to pay',
-    description: 'Your payment is encrypted and you can change how you pay anytime.',  
-  },
-];
+    {
+      label: 'Chọn gói dịch vụ.',
+    },
+    {
+      label: 'Chọn gói phù hợp với bạn.',
+      plans: [
+        {
+          name: 'Di động',
+          resolution: '480p',
+          price: '70.000 ₫',
+          quality: 'Trung bình',
+          devices: 'Điện thoại, máy tính bảng',
+          watch: 1,
+          download: 1,
+        },
+        {
+          name: 'Cơ bản',
+          resolution: '720p (HD)',
+          price: '108.000 ₫',
+          quality: 'Tốt',
+          devices: 'TV, máy tính, điện thoại, máy tính bảng',
+          watch: 1,
+          download: 1,
+        },
+        {
+          name: 'Tiêu chuẩn',
+          resolution: '1080p (Full HD)',
+          price: '220.000 ₫',
+          quality: 'Rất tốt',
+          devices: 'TV, máy tính, điện thoại, máy tính bảng',
+          watch: 2,
+          download: 2,
+        },
+        {
+          name: 'Premium',
+          resolution: '4K (Ultra HD) + HDR',
+          price: '260.000 ₫',
+          quality: 'Tuyệt vời',
+          spatialAudio: true,
+          devices: 'TV, máy tính, điện thoại, máy tính bảng',
+          watch: 4,
+          download: 6,
+        },
+      ],
+    },
+    {
+      label: 'Chọn phương thức thanh toán',
+      description: 'Thanh toán của bạn được mã hóa và bạn có thể thay đổi bất kỳ lúc nào.',
+    },
+]; 
 
 const Register = () => {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -83,46 +83,46 @@ const Register = () => {
             ))}
           </Stepper>
 
-          {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography sx={{ mt: 2, mb: 1 }}>
-                All steps completed - you're finished
-              </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                <Box sx={{ flex: '1 1 auto' }} />
-                <Button onClick={handleReset}>Reset</Button>
-              </Box>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {activeStep === 0 && <StepOne onNext={handleNext} />}
-              {activeStep === 1 && steps[1].plans && (
-                <>
-                  <StepTwo
-                    plans={steps[1].plans}
-                    selectedPlan={selectedPlan}
-                    setSelectedPlan={setSelectedPlan}
-                  />
-                  <div className="step-navigation">
-                    <Button onClick={handleBack}>Back</Button>
-                    <Button onClick={handleNext}>Next</Button>
-                  </div>
-                </>
-              )}
-              {activeStep === 2 && (
-                <>
-                  <StepThree
-                    label={steps[2].label}
-                    description={steps[2].description}
-                  />
-                  <div className="step-navigation">
-                    <Button onClick={handleBack}>Back</Button>
-                    <Button onClick={handleNext}>Finish</Button>
-                  </div>
-                </>
-              )}
-            </React.Fragment>
-          )}
+            {activeStep === steps.length ? (
+                <React.Fragment>
+                    <Typography sx={{ mt: 2, mb: 1 }}>
+                        Hoàn tất tất cả các bước – bạn đã đăng ký xong!
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                    <Box sx={{ flex: '1 1 auto' }} />
+                    <Button onClick={handleReset}>Làm lại</Button>
+                    </Box>
+                </React.Fragment>
+                ) : (
+                <React.Fragment>
+                    {activeStep === 0 && <StepOne onNext={handleNext} />}
+                    {activeStep === 1 && steps[1].plans && (
+                    <>
+                        <StepTwo
+                        plans={steps[1].plans}
+                        selectedPlan={selectedPlan}
+                        setSelectedPlan={setSelectedPlan}
+                        />
+                        <div className="step-navigation">
+                        <Button onClick={handleBack}>Quay lại</Button>
+                        <Button onClick={handleNext}>Tiếp theo</Button>
+                        </div>
+                    </>
+                    )}
+                    {activeStep === 2 && (
+                    <>
+                        <StepThree
+                        label={steps[2].label}
+                        description={steps[2].description}
+                        />
+                        <div className="step-navigation">
+                        <Button onClick={handleBack}>Quay lại</Button>
+                        <Button onClick={handleNext}>Hoàn tất</Button>
+                        </div>
+                    </>
+                    )}
+                </React.Fragment>
+            )}
         </div>
       </div>
     </div>

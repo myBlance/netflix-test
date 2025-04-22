@@ -16,7 +16,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
 
     useEffect(() => {
         async function fetchShowDetails() {
-            const response = await axios.get(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}`);
+            const response = await axios.get(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=vi`);
             setShow(response.data);
         }
         fetchShowDetails();
@@ -72,11 +72,11 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                                 </svg>
                             </div>
                             <div>
-                                <div><strong>User Score</strong></div>
+                                <div><strong>Điểm người dùng</strong></div>
                             </div>
                         </div>
                         <p className="show-tagline">{show.tagline}</p>
-                        <h2>Overview</h2>
+                        <h2>Tổng quan</h2>
                         <p className="show-overview">{show.overview}</p>
                         <div className="show-credits">
                             {show.credits?.crew?.slice(0, 3).map((crew: any) => (
@@ -89,7 +89,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                         <button 
                             className="play-trailer-button"
                             onClick={() => setShowTrailer(true)} // show trailer dạng Modal
-                        >▶ Play Trailer
+                        >▶ Xem giới thiệu
                         </button>
                     </div>
                 </div>

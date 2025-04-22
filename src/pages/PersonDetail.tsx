@@ -14,7 +14,7 @@ const PersonDetail = () => {
         const fetchPersonDetail = async () => {
             try {
                 const response = await axios.get(
-                    `${BASE_URL}/person/${id}?api_key=${API_KEY}&append_to_response=combined_credits`
+                    `${BASE_URL}/person/${id}?api_key=${API_KEY}&append_to_response=combined_credits&language=vi `
                 );
                 setPerson(response.data);
             } catch (error) {

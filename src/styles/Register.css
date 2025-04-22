@@ -189,7 +189,7 @@
 
 
 .step2-card.premium::before {
-    content: 'Most Popular';
+    content: 'Phổ biến nhất';
     position: absolute;
     top: -16px;
     left: 0;

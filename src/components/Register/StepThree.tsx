@@ -30,11 +30,11 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
             <h2 className="step-heading">{label}</h2>
             <div className='step3-description'>
                 <p>{description}</p>
-                <p><strong>Secure for peace of mind.</strong><br /><strong>Cancel easily online.</strong></p>
+                <p><strong>An toàn cho sự an tâm.</strong><br /><strong>Hủy trực tuyến dễ dàng.</strong></p>
             </div>
 
             <div className='end-to-end'>
-                <span>End-to-end encrypted 🔒</span>
+                <span>Được mã hóa đầu cuối 🔒</span>
             </div>
 
             <div className="step3-button">
@@ -46,7 +46,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
                     endIcon={< ArrowForwardIosIcon sx={{ml:"119px"}}/>}
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>Credit or Debit Card</span>
+                        <span style={{ marginRight: 12 }}>Thẻ tín dụng</span>
                         <img src="/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
                         <img src="/assets/mastercard.png" alt="MasterCard"  style={{ marginRight: 4 }} />
                         <img src="/assets/amex.png" alt="Amex" />
@@ -63,7 +63,7 @@ const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
 
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>Digital Wallet</span>
+                        <span style={{ marginRight: 12 }}>Ví điện tử</span>
                         <img src="/assets/momo.png" alt="MoMo"/>
                     </div>
                 </Button>

@@ -5,31 +5,31 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="footer-top">
-                <a href="#">Questions? Contact us.</a>
+                <a href="#">Có câu hỏi? Liên hệ với chúng tôi.</a>
             </div>
             <div className="footer-links">
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Speed Test</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Quan hệ đầu tư</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Kiểm tra tốc độ</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Cookie Preferences</a></li>
-                    <li><a href="#">Legal Notices</a></li>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Công việc</a></li>
+                    <li><a href="#">Tùy chọn cookie</a></li>
+                    <li><a href="#">Thông báo pháp lý</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Ways to Watch</a></li>
-                    <li><a href="#">Corporate Information</a></li>
-                    <li><a href="#">Only on Netflix</a></li>
+                    <li><a href="#">Tài khoản</a></li>
+                    <li><a href="#">Các phương thức xem</a></li>
+                    <li><a href="#">Thông tin công ty</a></li>
+                    <li><a href="#">Chỉ có trên Netflix</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Media Center</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Trung tâm truyền thông</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Liên hệ với chúng tôi</a></li>
                 </ul>
             </div>
             <div className="footer-bottom">

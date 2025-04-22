@@ -34,14 +34,14 @@ const SetupMomo: React.FC = () => {
     return (
         <div className="payMomo">
             <div className="momo-container">
-                <div className="pay-label">STEP 3 OF 3</div>
-                <h2 className="pay-title">Set up MoMo</h2>
-                <img src="/src/assets/momo.png" alt="MoMo" className="momo-logo" />
+                <div className="pay-label">Bước 3 trong 3</div>
+                <h2 className="pay-title">Thiết lập Momo</h2>
+                <img src="/assets/momo.png" alt="MoMo" className="momo-logo" />
 
-                <p className="instruction">Enter your MoMo mobile number.</p>
+                <p className="instruction">Nhập số điện thoại MoMo của bạn.</p>
 
                 <p className="sub-instruction">
-                    Your number will also be used if you forget your password and for important account messages. SMS fees may apply.
+                    Số của bạn cũng sẽ được sử dụng nếu bạn quên mật khẩu và cho các tin nhắn tài khoản quan trọng. Có thể áp dụng phí SMS.
                 </p>
 
                 <PhoneInput
@@ -68,10 +68,10 @@ const SetupMomo: React.FC = () => {
 
                 <div className="plan-info">
                     <div>
-                        <strong>{selectedPlan.price.toLocaleString()} ₫/month</strong>
+                        <strong>{selectedPlan.price.toLocaleString()} ₫/tháng</strong>
                         <div className="plan-type">{selectedPlan.name}</div>
                     </div>
-                    <button className="change-btn" onClick={() => setOpenDialog(true)}>Change</button> {/* Mở dialog khi nhấn Change */}
+                    <button className="change-btn" onClick={() => setOpenDialog(true)}>Thay đổi</button> {/* Mở dialog khi nhấn Change */}
                 </div>
 
                 {/* Dialog để chọn gói */}
@@ -105,7 +105,7 @@ const SetupMomo: React.FC = () => {
 
                 <div className="terms">
                     <Checkbox checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                    <span>I agree.</span>
+                    <span>Tôi đông ý</span>
                 </div>
 
                 <Button

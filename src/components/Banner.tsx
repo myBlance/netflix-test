@@ -17,7 +17,7 @@ const Banner: React.FC = () => {
 
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
+            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=vi`);
             setMovies(response.data.results.slice(0, 3)); // Lấy 3 phim đầu tiên làm slide
         }
             fetchMovies();

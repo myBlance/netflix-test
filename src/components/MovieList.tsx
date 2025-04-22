@@ -22,7 +22,7 @@ const MovieList: React.FC = () => {
 
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
+            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=vi`);
             setMovies(response.data.results);
         }
         fetchMovies();
@@ -44,7 +44,7 @@ const MovieList: React.FC = () => {
 
     return (
         <div className="movie-list">
-            <h2>Trending Now</h2>
+            <h2>Xu hướng hiện nay</h2>
             <div className="movie-list-controls">
                 <button className="prev-button" onClick={handlePrev}>
                     <ArrowBackIosNewIcon />

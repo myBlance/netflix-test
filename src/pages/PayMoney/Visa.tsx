@@ -37,12 +37,12 @@ const SetupCreditCard: React.FC = () => {
         <div className="setupCard">
             <div className="container">
 
-                <div className="step-label">STEP 3 OF 3</div>
-                <h2 className="title">Set up your credit or debit card</h2>
+                <div className="step-label">Bước 3 trong 3</div>
+                <h2 className="title">Thiết lập thẻ tín dụng hoặc thẻ ghi nợ</h2>
                 <div className='logo-container'>
-                    <img src="/src/assets/visa.png" alt="Visa" className="logo" />
-                    <img src="/src/assets/mastercard.png" alt="MasterCard" className="logo" />
-                    <img src="/src/assets/amex.png" alt="Amex" className="logo" />
+                    <img src="/assets/visa.png" alt="Visa" className="logo" />
+                    <img src="/assets/mastercard.png" alt="MasterCard" className="logo" />
+                    <img src="/assets/amex.png" alt="Amex" className="logo" />
                 </div>
                 <div className="input-field">
                     <TextField
@@ -52,7 +52,6 @@ const SetupCreditCard: React.FC = () => {
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         className="card-input"
-                                            // Chấp nhận tối đa 19 ký tự cho số thẻ
                     />
                 </div>
 
@@ -95,10 +94,10 @@ const SetupCreditCard: React.FC = () => {
             
                 <div className="plan-info">
                     <div>
-                        <strong>{selectedPlan.price.toLocaleString()} ₫/month</strong>
+                        <strong>{selectedPlan.price.toLocaleString()} ₫/tháng</strong>
                         <div className="plan-type">{selectedPlan.name}</div>
                     </div>
-                    <button className="change-btn" onClick={() => setOpenDialog(true)}>Change</button> {/* Mở dialog khi nhấn Change */}
+                    <button className="change-btn" onClick={() => setOpenDialog(true)}>Thay đổi</button> {/* Mở dialog khi nhấn Change */}
                     </div>
                     <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
                         <DialogTitle>Select a Plan</DialogTitle>
@@ -117,7 +116,7 @@ const SetupCreditCard: React.FC = () => {
                             </List>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={() => setOpenDialog(false)} color="primary">Cancel</Button>
+                            <Button onClick={() => setOpenDialog(false)} color="primary">Thoát</Button>
                         </DialogActions>
                     </Dialog>
 
@@ -136,7 +135,7 @@ const SetupCreditCard: React.FC = () => {
 
                     <div className="terms">
                         <Checkbox checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                        <span>I agree.</span>
+                        <span>Tôi đồng ý</span>
                     </div>
             
 
@@ -146,10 +145,10 @@ const SetupCreditCard: React.FC = () => {
                         className="start-btn"
                         disabled={!agree || !cardNumber || !expiryDate || !cvv || !cardHolder}
                     >
-                        Start Membership
+                        Bắt đầu thành viên
                     </Button>
 
-                <p className="note">You’ll be sent to MoMo to complete payment.</p>
+                <p className="note">You’ll be sent to Credit to complete payment.</p>
             </div>
         </div>
     );

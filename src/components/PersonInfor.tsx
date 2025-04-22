@@ -14,6 +14,20 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
         return Math.abs(ageDate.getUTCFullYear() - 1970);
     };
 
+    const viDepartment = (dep: string) => {
+        const map: Record<string, string> = {
+          Acting: 'Diễn viên',
+          Directing: 'Đạo diễn',
+          Writing: 'Biên kịch',
+          Production: 'Sản xuất',
+          Camera: 'Quay phim',
+          Editing: 'Biên tập',
+          Art: 'Nghệ thuật',
+          Sound: 'Âm thanh',
+        }
+        return map[dep] || dep
+      }
+
 
     const groupedByYear: Record<string, any[]> = person.combined_credits.cast.reduce((acc: any, movie: any) => {
         const year = movie.release_date?.substring(0, 4) || "—";
@@ -31,13 +45,12 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                         alt={person.name}
                         style={{ borderRadius: "10px", width: "100%" }}
                     />
-                    <div className="person-infor-content">
-                        
-                        <p><strong>Known For</strong><br />{person.known_for_department}</p>
-                        <p><strong>Known Credits</strong><br />{person.combined_credits?.cast?.length || 0}</p>
-                        <p><strong>Gender</strong><br />{person.gender === 1 ? "Female" : "Male"}</p>
-                        <p><strong>Birthday</strong><br />{person.birthday} ({calculateAge(person.birthday)} years old)</p>
-                        <p><strong>Place of Birth</strong><br />{person.place_of_birth}</p>
+                    <div className="person-infor-content"> 
+                        <p><strong>Ngành nghề nổi bật</strong><br />{viDepartment(person.known_for_department)}</p>
+                        <p><strong>Số lượng tác phẩm</strong><br />{person.combined_credits?.cast?.length || 0}</p>
+                        <p><strong>Giới tính</strong><br />{person.gender === 1 ? "Nữ" : "Nam"}</p>
+                        <p><strong>Ngày sinh</strong><br />{person.birthday} ({calculateAge(person.birthday)} Tuổi)</p>
+                        <p><strong>Quê quán</strong><br />{person.place_of_birth}</p>
                     </div>
                 </div>
     
@@ -48,14 +61,14 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                                 <h2 className="person-title">{person.name}</h2>
                                 {person.biography ? (
                                     <p className="biography-text">
-                                        <strong>Biography </strong><br />
+                                        <strong>Tiểu sử</strong><br />
                                         {person.biography}</p>
                                 ) : (
                                     <p className="biography-text">Tiểu sử đang được cập nhật...</p>
                                 )}
                             </div>
                             <div className="person-acting">
-                                <h3>Acting</h3>
+                                <h3>Vai diễn</h3>
 
                                 {Object.entries(groupedByYear)
                                     .sort(([yearA], [yearB]) => yearB.localeCompare(yearA))
@@ -78,7 +91,7 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                                                                     </span>
                                                                     <span className="acting-character">
                                                                         <span className="acting-character">
-                                                                            as <span style={{ color: "#d85959" }}>{movie.character || "—"}</span>
+                                                                            vai <span style={{ color: "#d85959" }}>{movie.character || "—"}</span>
                                                                         </span>
                                                                     </span>
                                                                 </div>

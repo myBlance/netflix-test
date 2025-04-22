@@ -6,30 +6,30 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 const Reasons: React.FC = () => {
   const reasons = [
     {
-      title: "Enjoy on your TV",
-      description: "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
+      title: "Thưởng thức trên TV của bạn",
+      description: "Xem trên Smart TV, Playstation, Xbox, Chromecast, Apple TV, đầu phát Blu-ray, và nhiều hơn nữa.",
       icon: TvIcon,
     },
     {
-      title: "Download your shows to watch offline",
-      description: "Save your favorites easily and always have something to watch.",
+      title: "Tải xuống chương trình để xem ngoại tuyến",
+      description: "Lưu lại chương trình yêu thích và luôn có thứ để xem bất cứ lúc nào.",
       icon: ArrowCircleDownIcon,
     },
     {
-      title: "Watch everywhere",
-      description: "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.",
+      title: "Xem mọi nơi",
+      description: "Truyền phát vô hạn phim và chương trình TV trên điện thoại, máy tính bảng, laptop và TV.",
       icon: TvIcon,
     },
     {
-      title: "Create profiles for kids",
-      description: "Send kids on adventures with their favorite characters in a space made just for them — free with your membership.",
+      title: "Tạo hồ sơ cho trẻ em",
+      description: "Gửi các bé vào những cuộc phiêu lưu với các nhân vật yêu thích trong không gian được tạo riêng cho chúng — miễn phí với thẻ thành viên của bạn.",
       icon: TvIcon,
     },
   ];
 
   return (
     <section className="reasons">
-      <h2 className="reasons-title">More Reasons to Join</h2>
+      <h2 className="reasons-title">Nhiều lý do hơn để tham gia</h2>
       <div className="reasons-list">
         {reasons.map((reason, index) => (
           <div key={index} className="reason-item">
