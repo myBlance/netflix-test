@@ -10,6 +10,7 @@ import '../styles/Register.css';
 import StepOne from '../components/Register/StepOne';
 import StepTwo from '../components/Register/StepTwo';
 import StepThree from '../components/Register/StepThree';
+import { Link } from "react-router-dom";
 
 const steps = [
     {
@@ -69,19 +70,22 @@ const Register = () => {
 
   const handleNext = () => setActiveStep((prev) => prev + 1);
   const handleBack = () => setActiveStep((prev) => prev - 1);
-  const handleReset = () => setActiveStep(0);
+
 
   return (
     <div className="register">
-      <div className="register-container">
-        <div className="register-box">
-          <Stepper activeStep={activeStep}>
-            {steps.map((step) => (
-              <Step key={step.label}>
-                <StepLabel>{step.label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
+        <Link to="/" className="logo-link">
+            <img src="/assets/netflix.svg" alt="Netflix Logo" className="logo" />
+        </Link>
+        <div className="register-container">
+            <div className="register-box">
+            <Stepper activeStep={activeStep}>
+                {steps.map((step) => (
+                <Step key={step.label}>
+                    <StepLabel>{step.label}</StepLabel>
+                </Step>
+                ))}
+            </Stepper>
 
             {activeStep === steps.length ? (
                 <React.Fragment>
@@ -89,8 +93,12 @@ const Register = () => {
                         Hoàn tất tất cả các bước – bạn đã đăng ký xong!
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                    <Box sx={{ flex: '1 1 auto' }} />
-                    <Button onClick={handleReset}>Làm lại</Button>
+                        <Box sx={{ flex: '1 1 auto' }} />
+                        <Button>
+                            <Link to="/" style={{color:'#fff'}}>
+                                 Trang chủ     
+                            </Link>
+                        </Button>
                     </Box>
                 </React.Fragment>
                 ) : (
@@ -99,25 +107,25 @@ const Register = () => {
                     {activeStep === 1 && steps[1].plans && (
                     <>
                         <StepTwo
-                        plans={steps[1].plans}
-                        selectedPlan={selectedPlan}
-                        setSelectedPlan={setSelectedPlan}
+                            plans={steps[1].plans}
+                            selectedPlan={selectedPlan}
+                            setSelectedPlan={setSelectedPlan}
                         />
                         <div className="step-navigation">
-                        <Button onClick={handleBack}>Quay lại</Button>
-                        <Button onClick={handleNext}>Tiếp theo</Button>
+                            <Button onClick={handleBack}>Quay lại</Button>
+                            <Button onClick={handleNext}>Tiếp theo</Button>
                         </div>
                     </>
                     )}
-                    {activeStep === 2 && (
+                        {activeStep === 2 && (
                     <>
                         <StepThree
-                        label={steps[2].label}
-                        description={steps[2].description}
+                            label={steps[2].label}
+                            description={steps[2].description}
                         />
                         <div className="step-navigation">
-                        <Button onClick={handleBack}>Quay lại</Button>
-                        <Button onClick={handleNext}>Hoàn tất</Button>
+                            <Button onClick={handleBack}>Quay lại</Button>
+                            <Button onClick={handleNext}>Hoàn tất</Button>
                         </div>
                     </>
                     )}
