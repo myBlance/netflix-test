@@ -29,7 +29,7 @@ const StepFour: React.FC<StepFourProps> = ({ label, description }) => {
             </div>
             <div className="step-title">BƯỚC 3 TRONG 3</div>
             <h2 className="step-heading">{label}</h2>
-            <div className='step3-description'>
+            <div className='step4-description'>
                 <p>{description}</p>
                 <p><strong>An toàn cho sự an tâm.</strong><br /><strong>Hủy trực tuyến dễ dàng.</strong></p>
             </div>
