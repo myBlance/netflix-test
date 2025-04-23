@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     background: #141414;
-    position: sticky;
     top: 0px;
     z-index: 10;
     height: 80px;
@@ -17,7 +16,7 @@
 
 }
   
-.nav-links .nav-link {
+.navbar .nav-links .nav-link {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;

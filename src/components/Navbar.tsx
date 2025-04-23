@@ -14,9 +14,6 @@ const Navbar: React.FC = () => {
                 <Link to="/qrpay" className="nav-link">
                     Thanh toán
                 </Link>
-                <Link to="/register" className="nav-link">
-                    Đăng ký
-                </Link>
                 <Link to="/login" className="nav-link">
                     Đăng nhập
                 </Link>

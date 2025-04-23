@@ -1,75 +1,75 @@
 import React from 'react';
-import { Button } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import { useNavigate } from "react-router-dom";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-interface StepThreeProps {
-  label: string;
-  description?: string;
+interface Plan {
+  name: string;
+  resolution: string;
+  price: string;
+  quality: string;
+  devices: string;
+  watch: number;
+  download: number;
+  spatialAudio?: boolean;
 }
 
-const StepThree: React.FC<StepThreeProps> = ({ label, description }) => {
-    const navigate = useNavigate(); 
+interface StepThreeProps {
+  plans: Plan[];
+  selectedPlan: number;
+  setSelectedPlan: (index: number) => void;
+}
 
-    const handlePayVisa = () => {
-        navigate(`/Visa`);
-    };
-    const handlePayMomo = () => {
-        navigate(`/Momo`);
-    };
-
-    return (
-        <div className="step3-container">
-            <div className='look-icon'>
-                <LockOutlinedIcon style={{ fontSize: 40 }} />
+const StepThree: React.FC<StepThreeProps> = ({ plans, selectedPlan, setSelectedPlan }) => {
+  return (
+    <>
+      <div className="step-title">BƯỚC 2 TRONG 3</div>
+      <div className="step-heading">Chọn gói phù hợp với bạn</div>
+      <div className="step3-container">
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className={`step3-card ${selectedPlan === index ? 'selected' : ''} ${plan.name === 'Premium' ? 'premium' : ''}`}
+            onClick={() => setSelectedPlan(index)}
+          >
+            {selectedPlan === index && (
+              <div className="check-icon">✔</div>
+            )}
+            <h3>
+              <div>{plan.name}</div>
+              <div>{plan.resolution}</div>
+            </h3>
+            <div className='step3-card-item-1'>
+              <strong>Giá mỗi tháng</strong>
+              <p>{plan.price}</p>
             </div>
-            <div className="step-title">STEP 3 OF 3</div>
-            <h2 className="step-heading">{label}</h2>
-            <div className='step3-description'>
-                <p>{description}</p>
-                <p><strong>An toàn cho sự an tâm.</strong><br /><strong>Hủy trực tuyến dễ dàng.</strong></p>
+            <div className="step3-card-item">
+              <strong>Chất lượng video và âm thanh</strong>
+              <p>{plan.quality}</p>
             </div>
-
-            <div className='end-to-end'>
-                <span>Được mã hóa đầu cuối 🔒</span>
+            <div className="step3-card-item">
+              <strong>Độ phân giải</strong>
+              <p>{plan.resolution}</p>
             </div>
-
-            <div className="step3-button">
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={() => handlePayVisa()}
-                    startIcon={<CreditCardIcon />}
-                    endIcon={< ArrowForwardIosIcon sx={{ml:"119px"}}/>}
-                >
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>Thẻ tín dụng</span>
-                        <img src="/assets/visa.png" alt="Visa"  style={{ marginRight: 4 }} />
-                        <img src="/assets/mastercard.png" alt="MasterCard"  style={{ marginRight: 4 }} />
-                        <img src="/assets/amex.png" alt="Amex" />
-                    </div>
-                </Button>
-
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    
-                    onClick={handlePayMomo}
-                    startIcon={<AccountBalanceWalletIcon />}
-                    endIcon={< ArrowForwardIosIcon sx={{ml:"242px"}}/>}
-
-                >
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>Ví điện tử</span>
-                        <img src="/assets/momo.png" alt="MoMo"/>
-                    </div>
-                </Button>
+            <div className="step3-card-item">
+              {plan.spatialAudio && (
+                <p><strong>Âm thanh vòm (trải nghiệm sống động):</strong> Có sẵn</p>
+              )}
             </div>
-        </div>
-    );
+            <div className="step3-card-item">
+              <strong>Thiết bị hỗ trợ:</strong>
+              <p>{plan.devices}</p>
+            </div>
+            <div className="step3-card-item">
+              <strong>Số thiết bị có thể xem cùng lúc</strong>
+              <p>{plan.watch}</p>
+            </div>
+            <div className="step3-card-item">
+              <strong>Số thiết bị có thể tải xuống</strong>
+              <p>{plan.download}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default StepThree;

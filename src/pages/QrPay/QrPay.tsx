@@ -106,7 +106,7 @@ const QrPay = () => {
             <ToastContainer position="top-right" />
             <div className='qrpay-container'>
                 <Link to="/" className="logo-link">
-                    <img src="/src/assets/netflix.svg" alt="Netflix Logo" className="logo" />
+                    <img src="/assets/netflix.svg" alt="Netflix Logo" className="logo" />
                 </Link>
                 <div className='qrpay-title'>
                     <h2>Thanh toán bằng QR Code</h2>

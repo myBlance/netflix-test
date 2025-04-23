@@ -4,6 +4,7 @@
   overflow: hidden;
   border-radius: 40px;
   margin: 0 40px;
+  box-shadow: 0px 14px 20px rgba(250, 237, 237, 0.5); 
 }
 
 .banner-slide {
@@ -30,20 +31,6 @@
 
 .banner-content h1{
   font-family: 'Courier New', Courier, monospace;
-}
-
-.play-button {
-  background: #e63838;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background 0.3s ease; /* Smooth button hover effect */
-}
-
-.play-button:hover {
-  background: darkred;
 }
 
 .banner-controls {

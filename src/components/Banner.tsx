@@ -4,20 +4,15 @@ import "../styles/Banner.css";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { useNavigate } from "react-router-dom";
+import EmailForm from "./EmailForm";
 
 const Banner: React.FC = () => {
     const [movies, setMovies] = useState<any[]>([]);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const navigate = useNavigate(); 
-
-    const handleWatchNow = (movie: any) => {
-        navigate(`/movie/${movie.id}`);
-    };
+    const [currentSlide, setCurrentSlide] = useState(0); 
 
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=vi`);
+            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
             setMovies(response.data.results.slice(0, 3)); // Lấy 3 phim đầu tiên làm slide
         }
             fetchMovies();
@@ -43,12 +38,7 @@ const Banner: React.FC = () => {
                 <div className="banner-content">
                     <h1>{movies[currentSlide]?.title || movies[currentSlide]?.name}</h1>
                     <p>{movies[currentSlide]?.overview}</p>
-                    <button 
-                        className="play-button"
-                        onClick={() => handleWatchNow(movies[currentSlide])}
-                    >
-                        ▶ Xem ngay
-                    </button>
+                    <EmailForm/>
                 </div>
                 <div className="banner-controls">
                     <button className="prev-button" onClick={handlePrev}>

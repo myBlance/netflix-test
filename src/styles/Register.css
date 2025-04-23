@@ -3,8 +3,21 @@
     height: 100vh; 
 }
 
-.register .logo-link {
-   margin-top: 5%;
+.register .navbar {
+    background-color: #fff;
+    height: 100px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo-link img {
+    width: 150px;
+    height: 120px;
+}
+
+.navbar .nav-link {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .register-container {
@@ -52,7 +65,7 @@
 }
 
 .step-heading {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin: 20px 0;
 }
@@ -62,14 +75,44 @@
 
 
 
-/* Step 1 */
+
+/* Step 1*/
 
 .step1-container {
+    text-align: left;
+    padding: 20px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.step1-content {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.email-info strong {
+    color: #000;
+}
+
+.email-info p {
+    font-size: 18px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Step 2 */
+
+.step2-container {
     text-align: center;
     padding: 40px 20px;
 }
 
-.step1-check-icon {
+.step2-check-icon {
     font-size: 32px;
     color: red;
     border: 2px solid red;
@@ -83,24 +126,24 @@
     font-weight: bold;
 }
 
-.step1-list {
+.step2-list {
     list-style: none;
     padding-left: 0;
     text-align: left;
-    max-width: 300px;
+    max-width: 370px;
     margin: 0 auto 30px;
 }
 
-.step1-list li {
+.step2-list li {
     font-weight: bold;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 20px;
     padding-left: 24px;
     position: relative;
     color: #333;
 }
 
-.step1-list li::before {
+.step2-list li::before {
     content: "✔";
     position: absolute;
     left: 0;
@@ -108,7 +151,7 @@
     font-weight: bold;
 }
 
-.step1-next-button {
+.step2-next-button {
     background-color: red !important;
     color: white !important;
     padding: 10px 30px;
@@ -121,9 +164,9 @@
 
 
 
-/* Step 2 */
+/* Step 3 */
 
-.step2-container {
+.step3-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -131,7 +174,7 @@
     flex-wrap: wrap;
 }
   
-.step2-card {
+.step3-card {
     flex: 1;
     min-width: 170px;
     border-radius: 12px;
@@ -146,7 +189,7 @@
     position: relative;
 }
   
-.step2-card h3 {
+.step3-card h3 {
     margin: 0 0 10px;
     border-radius: 12px;
     padding: 12px;
@@ -155,32 +198,32 @@
     background: linear-gradient(to bottom right, #2836d1, #7b1ddf);
 }
 
-.step2-card-item-1 {
+.step3-card-item-1 {
     margin: 0px 10px;
 }
 
-.step2-card-item {
+.step3-card-item {
     margin: 0px 10px;
     border-top: 0.5px solid #a7a7a7;
 }
 
-.step2-card p {
+.step3-card p {
     margin: 4px 0;
     font-size: 16px;
     font-weight: bolder;
 }
 
-.step2-card Strong {
+.step3-card Strong {
     font-size: 12px;
     color: #828282;
 }
   
-.step2-card.selected {
+.step3-card.selected {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     
 }
   
-.step2-card .check-icon {
+.step3-card .check-icon {
     position: absolute;
     top: 65px;
     right: 30px;
@@ -193,7 +236,7 @@
 }
 
 
-.step2-card.premium::before {
+.step3-card.premium::before {
     content: 'Phổ biến nhất';
     position: absolute;
     top: -16px;
@@ -208,7 +251,7 @@
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
-.step2-card.premium.selected::before {
+.step3-card.premium.selected::before {
     background: #ff0000;
     
 }
@@ -218,9 +261,9 @@
 
 
 
-/* Step 3 */
+/* Step 4 */
 
-.step3-container {
+.step4-container {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
@@ -236,12 +279,12 @@
     border-radius: 50%;
 }
 
-.step3-description {
+.step4-description {
     font-size: 21px;
     color: #000;
 }
 
-.step3-description strong {
+.step4-description strong {
     color: #000;
 }
 
@@ -253,7 +296,7 @@
     margin-top: 24px;
 }
 
-.step3-button Button {
+.step4-button Button {
     background-color: #fff;
     color: #000;
     text-transform: none;
@@ -261,6 +304,6 @@
     margin-bottom: 10px;   
 }
 
-.step3-button Button img {
+.step4-button Button img {
     width: 30px;
 }

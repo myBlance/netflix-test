@@ -5,6 +5,7 @@ import MovieList from "../components/MovieList";
 import Footer from "../components/Footer";
 import Reasons from "../components/Reasons";
 import AskedQuestions from '../components/AskedQuestion';
+import EmailForm from "../components/EmailForm";
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <MovieList />
         <Reasons />
         <AskedQuestions/>
+        <EmailForm/>
         <Footer/>
     </div>
   );
