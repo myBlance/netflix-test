@@ -130,7 +130,6 @@ const SetupCreditCard: React.FC<SetupCreditCardProps> = ({ selectedPlan}) => {
                     <span>Tôi đồng ý</span>
                 </div>
             
-
                 <Button
                     variant="contained"
                     fullWidth

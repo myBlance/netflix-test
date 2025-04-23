@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Editplan from './PayMoney/editplan';
+import Editplan from './PayMoney/Editplan';
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import { useNavigate, useLocation } from 'react-router-dom';

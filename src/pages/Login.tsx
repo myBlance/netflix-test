@@ -1,7 +1,10 @@
 import "../styles/Login.css";
+import { useState } from 'react';
+import { Checkbox } from '@mui/material';
 
 const Login = () => {
-    
+    const [agree, setAgree] = useState(false);
+
     return (
         <div className="login">
             <div className="login-container">
@@ -14,10 +17,9 @@ const Login = () => {
                     <button className="btn-code">Sử dụng mã đăng nhập</button>
                     <a href="#" className="forgot-password">Bạn quên mật khẩu?</a>
 
-                    <div className="remember-me">
-                        <label>
-                            <input type="checkbox"  /> Ghi nhớ tôi
-                        </label>
+                    <div className="terms">
+                        <Checkbox checked={agree} onChange={(e) => setAgree(e.target.checked)} />
+                        <span>Nhớ mật khẩu</span>
                     </div>
 
                     <p className="signup-text">Bạn mới sử dụng Netflix? 
