@@ -5,12 +5,12 @@
 
 .register .navbar {
     background-color: #fff;
-    height: 100px;
+    height: 70px;
     box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
 .navbar .logo-link img {
-    width: 150px;
+    width: 170px;
     height: 120px;
 }
 
@@ -75,14 +75,13 @@
 
 
 
-
 /* Step 1*/
 
 .step1-container {
     text-align: left;
     padding: 20px;
-    width: 50%;
-    margin-left: 25%;
+    width: 40%;
+    margin-left: 30%;
 }
 
 .step1-content {
@@ -99,6 +98,13 @@
     margin: 0;
 }
 
+.step1-container .forgot-password {
+    color: #2836d1;
+    margin: 20px 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
 
 
 

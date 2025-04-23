@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import '../styles/EmailForm.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const EmailForm: React.FC = () => {
     const [email, setEmail] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Email:', email);
-      // Xử lý logic tại đây (ví dụ gửi API)
+        navigate("/Register", { state: { email } });
     };
 
     return (
@@ -28,10 +28,10 @@ const EmailForm: React.FC = () => {
                         className="email-input"
                         required
                     />
-                    <Link to="/Register" className="email-button" state={{ email }} >
+                    <button type="submit" className="email-button">
                         Bắt đầu
-                        <ArrowForwardIosIcon/>
-                    </Link>                   
+                        <ArrowForwardIosIcon />
+                    </button>                   
                 </form>
             </div>
         </div>
