@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import SetupMomo from "./pages/PayMoney/Momo";
 import SetupVisa from "./pages/PayMoney/Visa";
 import QrPay from "./pages/QrPay/QrPay";
+import EditplanPage from "./pages/EditplanPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/momo" element={<SetupMomo />} />
         <Route path="/visa" element={<SetupVisa />} />
         <Route path="/qrpay" element={<QrPay/>} />
+        <Route path="/editplan" element={<EditplanPage/>}/>
       </Routes>
     </Router>
   );

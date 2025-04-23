@@ -1,0 +1,154 @@
+.editplan {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.editplan .navbar {
+    background-color: #fff;
+    height: 70px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo-link img {
+    width: 170px;
+    height: 120px;
+}
+
+.navbar .nav-link {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.editplan-container {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2%;
+   
+}
+
+.editplan-content {
+    text-align: left;
+    height: 300px;
+    margin-left: 35%;
+}
+
+.editplan-label {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.description {
+    font-size: 18px;
+    padding: 0;
+}
+
+.editplan Button {
+    background-color: red ;
+    color: white;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.step-navigation Button{
+    margin: 50px 50px;
+}
+
+.step-title {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.step-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.step3-card {
+    flex: 1;
+    min-width: 170px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+    border: 1px solid #828282;
+    text-align: left;
+    position: relative;
+}
+  
+.step3-card h3 {
+    margin: 0 0 10px;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to bottom right, #2836d1, #7b1ddf);
+}
+
+.step3-card-item-1 {
+    margin: 0px 10px;
+}
+
+.step3-card-item {
+    margin: 0px 10px;
+    border-top: 0.5px solid #a7a7a7;
+}
+
+.step3-card p {
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.step3-card Strong {
+    font-size: 12px;
+    color: #828282;
+}
+  
+.step3-card.selected {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    
+}
+  
+.step3-card .check-icon {
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    padding: 0 4px;
+    color: rgb(255, 0, 0);
+    border: 2px solid #ff0000;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+
+.step3-card.premium::before {
+    content: 'Phổ biến nhất';
+    position: absolute;
+    top: -16px;
+    left: 0;
+    right: 0;
+    background: #5f5f5f;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.step3-card.premium.selected::before {
+    background: #ff0000;
+    
+}
+   

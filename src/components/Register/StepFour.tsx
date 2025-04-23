@@ -27,7 +27,7 @@ const StepFour: React.FC<StepFourProps> = ({ label, description }) => {
             <div className='look-icon'>
                 <LockOutlinedIcon style={{ fontSize: 40 }} />
             </div>
-            <div className="step-title">STEP 3 OF 3</div>
+            <div className="step-title">BƯỚC 3 TRONG 3</div>
             <h2 className="step-heading">{label}</h2>
             <div className='step3-description'>
                 <p>{description}</p>
@@ -56,12 +56,10 @@ const StepFour: React.FC<StepFourProps> = ({ label, description }) => {
 
                 <Button
                     variant="outlined"
-                    fullWidth
-                    
+                    fullWidth  
                     onClick={handlePayMomo}
                     startIcon={<AccountBalanceWalletIcon />}
                     endIcon={< ArrowForwardIosIcon sx={{ml:"247px"}}/>}
-
                 >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: 12 }}>Ví điện tử</span>

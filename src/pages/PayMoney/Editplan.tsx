@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Định nghĩa interface Plan
 interface Plan {
   name: string;
   resolution: string;
@@ -8,31 +9,34 @@ interface Plan {
   devices: string;
   watch: number;
   download: number;
-  spatialAudio?: boolean;
+  spatialAudio?: boolean; 
 }
 
-interface StepThreeProps {
+
+// Định nghĩa props cho Editplan
+interface EditplanProps {
   plans: Plan[];
   selectedPlan: { name: string; price: number } | null;
   setSelectedPlan: (plan: { name: string; price: number }) => void;
 }
 
-const StepThree: React.FC<StepThreeProps> = ({ plans, selectedPlan, setSelectedPlan }) => {
-  
+const Editplan: React.FC<EditplanProps> = ({ plans, selectedPlan, setSelectedPlan }) => {
+
+  const handlePlanSelect = (plan: Plan) => {
+    const selected = { name: plan.name, price: parseInt(plan.price.replace(/[^\d]/g, '')) };
+    setSelectedPlan(selected);
+    localStorage.setItem('selectedPlan', JSON.stringify(selected)); // Lưu vào localStorage
+  };
+
   return (
     <>
-      <div className="step-title">BƯỚC 2 TRONG 3</div>
       <div className="step-heading">Chọn gói phù hợp với bạn</div>
       <div className="step3-container">
         {plans.map((plan, index) => (
           <div
             key={index}
             className={`step3-card ${selectedPlan?.name === plan.name ? 'selected' : ''} ${plan.name === 'Premium' ? 'premium' : ''}`}
-            onClick={() => {
-              const selected = { name: plan.name, price: parseInt(plan.price.replace(/[^\d]/g, '')) };
-              setSelectedPlan(selected);
-              localStorage.setItem('selectedPlan', JSON.stringify(selected)); // lưu vào localStorage
-            }}            
+            onClick={() => handlePlanSelect(plan)} // Sử dụng hàm xử lý sự kiện
           >
             {selectedPlan?.name === plan.name && (
               <div className="check-icon">✔</div>
@@ -77,4 +81,4 @@ const StepThree: React.FC<StepThreeProps> = ({ plans, selectedPlan, setSelectedP
   );
 };
 
-export default StepThree;
+export default Editplan;

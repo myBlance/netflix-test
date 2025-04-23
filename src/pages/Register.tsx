@@ -18,7 +18,7 @@ const steps = [
         label: 'Chọn gói dịch vụ.',
         plans: [
         {
-            name: 'Di động',
+            name: 'Mobile',
             resolution: '480p',
             price: '70.000 ₫',
             quality: 'Trung bình',
@@ -27,7 +27,7 @@ const steps = [
             download: 1,
         },
         {
-            name: 'Cơ bản',
+            name: 'Basic',
             resolution: '720p (HD)',
             price: '108.000 ₫',
             quality: 'Tốt',
@@ -36,7 +36,7 @@ const steps = [
             download: 1,
         },
         {
-            name: 'Tiêu chuẩn',
+            name: 'Standard',
             resolution: '1080p (Full HD)',
             price: '220.000 ₫',
             quality: 'Rất tốt',
@@ -66,9 +66,14 @@ const steps = [
     },
 ];
 
+interface Plan {
+    name: string;
+    price: number;
+  }
+
 const Register = () => {
     const [activeStep, setActiveStep] = React.useState(0);
-    const [selectedPlan, setSelectedPlan] = React.useState(0);
+    const [selectedPlan, setSelectedPlan] = React.useState<Plan | null>(null);
     const location = useLocation();
 const email = location.state?.email ?? '';
 
