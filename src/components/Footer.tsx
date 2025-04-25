@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../styles/Footer.css";
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
 const Footer: React.FC = () => {
+    const [language, setLanguage] = useState<string>("");
+
+    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+        setLanguage(event.target.value as string);
+    };
+
     return (
         <footer className="footer">
             <div className="footer-top">
                 <a href="#">Có câu hỏi? Liên hệ với chúng tôi.</a>
+                <Select
+                    value={language}
+                    // onChange={handleChange}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
+                >
+                    <MenuItem value="">
+                        <em>Tiếng Việt</em>
+                    </MenuItem>
+                    <MenuItem value="en">English</MenuItem>
+                </Select>
             </div>
             <div className="footer-links">
                 <ul>

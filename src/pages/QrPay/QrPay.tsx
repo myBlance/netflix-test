@@ -42,38 +42,7 @@ const QrPay = () => {
 
     //  Lắng nghe sự kiện thanh toán từ server và hiển thị thông báo
     useEffect(() => {
-        if (payStatus === 'Unpaid') {
-            toast.info(
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <svg width={0} height={0}>
-                        <defs>
-                            <linearGradient id="my_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stopColor="#e01cd5" />
-                                <stop offset="100%" stopColor="#1CB5E0" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>Chờ thanh toán...</span>
-                        <CircularProgress
-                            size={28}
-                            thickness={4}
-                            sx={{
-                                'svg circle': {
-                                    stroke: 'url(#my_gradient)',
-                                },
-                            }}
-                        />
-                </Box>,
-                {
-                    position: "top-right",
-                    autoClose: false,
-                    closeOnClick: false,
-                    draggable: false,
-                    closeButton: false,
-                    toastId: 'waiting-toast',
-                }
-            );
-        } else if (payStatus === 'Paid') {
+        if (payStatus === 'Paid') {
             toast.dismiss('waiting-toast'); 
             toast.success('Thanh toán thành công!', {
                 position: "top-right",

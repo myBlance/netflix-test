@@ -1,13 +1,23 @@
-.login {
+.login-page .navbar {
+   background-color: transparent;
+}
+
+
+.background {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('/assets/the_netflix_login_background.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
+    justify-content: center;   
+    height: 130vh;
+    align-items:center;                   
+}
+.login {
+    font-family: Arial, Helvetica, sans-serif;
     color: #fff; 
     display: flex;
     justify-content: center;   
-    align-items: center;       
+    align-items:center;       
     height: 100vh;             
     margin: 0;
 }
@@ -19,74 +29,73 @@
     border-radius: 4px;
     max-width: 450px; 
     box-sizing: border-box;
+    text-align: left;
 }
   
 .login-container h2 {
     font-size: 32px;
-    margin-bottom: 30px;
-}
-  
-.login-container input {
-    width: 90%;
-    padding: 12px;
-    margin-bottom: 16px;
-    background: #333;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
+    margin-bottom: 20px;
 }
   
 .btn-login {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: #e50914;
     border: none;
     border-radius: 4px;
+    font-size: 16px;
     color: #fff;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
     margin-bottom: 16px;
+}
+
+.btn-login:hover {
+    background-color: #cc2129;
 }
   
 .divider {
     text-align: center;
-    color: #666;
-    margin: 10px 0;
+    color: #b8b8b8;
+    margin-bottom: 16px;
 }
   
 .btn-code {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: #666;
     border: none;
+    font-size: 16px;
+    font-weight: bolder;
     border-radius: 4px;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     cursor: pointer;
 }
   
 .forgot-password {
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
     text-decoration: underline;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
-  
-.terms-agreement {
+
+.forgot-password:hover {
     color: #aaa;
-    font-size: 12px;
-    margin-top: 20px;
 }
   
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
+.login-container .terms{
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
-  
+ 
 .signup-text {
-    font-size: 14px;
+    font-size: 16px;
+    color: #aaa;
+    margin: 0;
 }
   
 .signup-text a {
@@ -96,7 +105,7 @@
 }
   
 .captcha-note {
-    font-size: 12px;
+    font-size: 14px;
     color: #666;
     margin-top: 20px;
 }
