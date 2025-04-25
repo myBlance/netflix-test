@@ -99,17 +99,24 @@ const Banner: React.FC = () => {
                 </button>
 
                 {movies.map((_, index) => (
-                    <LinearProgress
+                    <div
                         key={index}
-                        variant="determinate"
-                        value={progress[index]}
-                        className="slide-progress-bar"
-                        sx={{
-                            backgroundColor: 'rgba(236, 236, 236, 0.3)',
-                            '& .MuiLinearProgress-bar': { backgroundColor: '#fff' },
-                            
+                        onClick={() => {
+                            setCurrentSlide(index);
+                            setProgress([0, 0, 0]);
                         }}
-                    />
+                        className={`progress-wrapper ${index === currentSlide ? 'active' : ''}`}
+                    >
+                        <LinearProgress
+                            variant="determinate"
+                            value={progress[index]}
+                            className="slide-progress-bar"
+                            sx={{
+                                backgroundColor: 'rgba(236, 236, 236, 0.3)',
+                                '& .MuiLinearProgress-bar': { backgroundColor: '#fff' },
+                            }}
+                        />
+                  </div>
                 ))}
             </div>
         </header>

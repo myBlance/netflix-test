@@ -47,6 +47,11 @@
   border-radius: 4px;
 }
 
+.progress-wrapper:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .banner-slide {
   height: 100%;
   background-size: cover;
