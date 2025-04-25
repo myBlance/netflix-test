@@ -7,6 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useTranslation } from 'react-i18next'
 
 const Login = () => {
     const [agree, setAgree] = useState(false);
@@ -15,6 +16,8 @@ const Login = () => {
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
     };
+
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="login-page">     
@@ -30,11 +33,11 @@ const Login = () => {
             <div className="login">
 
                 <div className="login-container">
-                    <h2>Đăng nhập</h2>
+                    <h2>{t("login")}</h2>
                     <form>
                         <TextField
                             id="filled-multiline-flexible"
-                            label="Email hoặc số điện thoại di động"
+                            label={t("email")}
                           
                             maxRows={4}
                             variant="filled"
@@ -68,7 +71,7 @@ const Login = () => {
                         />
                         <TextField
                             id="filled-multiline-flexible"
-                            label="Mật khẩu"
+                            label={t("password")}
                             
                             maxRows={4}
                             variant="filled"
@@ -118,8 +121,8 @@ const Login = () => {
                             }}
                         />
 
-                        <button className="btn-login">Đăng nhập</button>
-                        <div className="divider">HOẶC</div>
+                        <button className="btn-login">{t("login")}</button>
+                        <div className="divider">{t("or")}</div>
                         <button className="btn-code">Sử dụng mã đăng nhập</button>
                         <a href="#" className="forgot-password">Bạn quên mật khẩu?</a>
 
