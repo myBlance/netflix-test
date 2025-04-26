@@ -7,7 +7,7 @@ interface StepTwoProps {
 }
 
 const StepOne: React.FC<StepTwoProps> = ({ onNext }) => {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <div className="step2-container">

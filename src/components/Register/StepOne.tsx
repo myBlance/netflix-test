@@ -10,7 +10,7 @@ type StepOneProps = {
 
 const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
     const [password, setPassword] = useState('');
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <div className="step1-container">

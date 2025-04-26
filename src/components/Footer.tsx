@@ -4,7 +4,7 @@ import Language from './Language';
 import { useTranslation } from 'react-i18next'
 
 const Footer: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <footer className="footer">

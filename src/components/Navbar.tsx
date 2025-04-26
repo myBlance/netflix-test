@@ -4,7 +4,7 @@ import "../styles/Navbar.css";
 import { useTranslation } from 'react-i18next'
 
 const Navbar: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (
         <nav className="navbar">
             <Link to="/" className="logo-link">

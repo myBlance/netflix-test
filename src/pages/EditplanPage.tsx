@@ -12,7 +12,7 @@ const EditplanPage: React.FC = () => {
     const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: number } | null>(null);
     const navigate = useNavigate();
     const location = useLocation();
-        const { t, i18n } = useTranslation();
+        const { t } = useTranslation();
 
     const handleChange = () => {
         const previous = location.state?.from;

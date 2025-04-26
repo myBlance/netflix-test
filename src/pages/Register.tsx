@@ -22,7 +22,7 @@ const Register = () => {
     const [selectedPlan, setSelectedPlan] = React.useState<Plan | null>(null);
     const location = useLocation();
     const email = location.state?.email ?? '';
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const handleNext = () => setActiveStep((prev) => prev + 1);
 
     const steps = [

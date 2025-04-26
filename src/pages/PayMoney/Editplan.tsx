@@ -38,11 +38,7 @@ const Editplan: React.FC<EditplanProps> = ({ plans, selectedPlan, setSelectedPla
                     <div
                         key={index}
                         className={`step3-card ${selectedPlan?.name === plan.name ? 'selected' : ''} ${plan.name === 'Premium' ? 'premium' : ''}`}
-                        onClick={() => {
-                            const selected = { name: plan.name, price: parseInt(plan.price.replace(/[^\d]/g, '')) };
-                            setSelectedPlan(selected);
-                            localStorage.setItem('selectedPlan', JSON.stringify(selected));
-                        }}
+                        onClick={() => handlePlanSelect(plan)}
                     >
                         {selectedPlan?.name === plan.name && (
                             <div className="check-icon">✔</div>
