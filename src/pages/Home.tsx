@@ -17,7 +17,7 @@ const Home: React.FC = () => {
             <MovieList />
             <Reasons />
             <AskedQuestions/>
-            <EmailForm/>
+            <EmailForm setPlaying={(playing: boolean) => console.log("Playing:", playing)} />
             <Footer/>
         </div>
     );

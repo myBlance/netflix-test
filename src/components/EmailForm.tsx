@@ -6,10 +6,15 @@ import { TextField } from '@mui/material';
 import { useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify';
 
-const EmailForm: React.FC = () => {
+interface EmailFormProps {
+    setPlaying: (playing: boolean) => void;
+}
+
+const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
     const { t } = useTranslation();
+
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -39,6 +44,8 @@ const EmailForm: React.FC = () => {
                         label={t("email address")}
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
+                        onFocus={() => setPlaying(false)} // Khi focus vào input -> dừng slider
+                        onBlur={() => setPlaying(true)} 
                         maxRows={4}
                         variant="filled"
                         
