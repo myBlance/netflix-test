@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Button, CircularProgress, Box } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 import { io } from 'socket.io-client';
 import { Link } from "react-router-dom";
 import '../../styles/QrPay.css';
 import { toast, ToastContainer } from 'react-toastify';
 import axiosClient from '../../services/axiosClient';
-
-
 
 
 // URL này trỏ tới Socket Server

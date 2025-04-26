@@ -4,21 +4,32 @@ import '../styles/EmailForm.css';
 import { useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material';
 import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify';
 
 const EmailForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        navigate("/Register", { state: { email } });
+
+        // Kiểm tra email hợp lệ
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!email || !emailRegex.test(email)) {
+            // Hiển thị thông báo lỗi nếu email không hợp lệ
+            toast.error('Vui lòng nhập email hợp lệ!');
+            return;
+        }
+
+        // Xử lý nếu email hợp lệ
+        toast.success(`Email đã được gửi: ${email}`);
+        navigate("/Register", { state: { email } }); // Chuyển hướng trang với email
     };
 
     return (
         <div className="email-form-container" id='form-email'>
             <div className='email-container'>
-
                 <h2 className="email-form-title">
                     {t("emailformtitle")}
                 </h2>
@@ -30,10 +41,9 @@ const EmailForm: React.FC = () => {
                         value={email}
                         maxRows={4}
                         variant="filled"
+                        
                         sx={{
-                            
                             width: '65%',
-                            
                             '& .MuiFilledInput-root': {
                                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
                                 borderRadius: '40px',
