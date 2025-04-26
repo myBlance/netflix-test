@@ -12,6 +12,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import '../styles/AskedQuestion.css';
+import { useTranslation } from 'react-i18next';
 
 const Accordion = styled((props: AccordionProps) => (
   	<MuiAccordion disableGutters elevation={0} square {...props} />
@@ -51,31 +52,33 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const AskedQuestions: React.FC = () => {
+    const { t } = useTranslation();
+
     const questions = [
-        {
-          title: "Netflix là gì?",
-          description: "Netflix là dịch vụ phát trực tuyến cung cấp nhiều loại chương trình truyền hình, phim ảnh, anime, tài liệu, và nhiều hơn nữa trên hàng nghìn thiết bị kết nối internet. Xem bao nhiêu tùy thích, bất cứ lúc nào bạn muốn, không có quảng cáo – tất cả chỉ với một mức giá tháng thấp. Luôn có điều gì đó mới để khám phá, và các chương trình TV và phim mới được thêm vào mỗi tuần!",
-        },
-        {
-          title: "Netflix có giá bao nhiêu?",
-          description: "Các gói dịch vụ dao động từ $6.99 đến $19.99 mỗi tháng. Không có chi phí phát sinh, không hợp đồng.",
-        },
-        {
-          title: "Tôi có thể xem ở đâu?",
-          description: "Xem ngay lập tức từ bất kỳ thiết bị kết nối internet nào có ứng dụng Netflix, hoặc phát trực tuyến từ laptop, máy tính bảng hoặc điện thoại của bạn.",
-        },
-        {
-          title: "Làm thế nào để hủy đăng ký?",
-          description: "Netflix rất linh hoạt. Không có hợp đồng rườm rà và cam kết dài hạn. Bạn có thể dễ dàng hủy tài khoản trực tuyến chỉ với hai cú click.",
-        },
-        {
-          title: "Tôi có thể xem gì trên Netflix?",
-          description: "Netflix có một thư viện phong phú các phim điện ảnh, tài liệu, chương trình truyền hình, anime, các bộ phim gốc đoạt giải thưởng của Netflix và nhiều hơn nữa.",
-        },
-        {
-          title: "Netflix có phù hợp cho trẻ em không?",
-          description: "Trải nghiệm Netflix dành cho trẻ em được bao gồm trong gói thành viên của bạn, giúp phụ huynh kiểm soát trong khi trẻ em thưởng thức các chương trình và phim dành cho gia đình trong không gian riêng của chúng.",
-        },
+    {
+        title: t("Faq.q1.title"),
+        description: t("Faq.q1.description"),
+    },
+    {
+        title: t("Faq.q2.title"),
+        description: t("Faq.q2.description"),
+    },
+    {
+        title: t("Faq.q3.title"),
+        description: t("Faq.q3.description"),
+    },
+    {
+        title: t("Faq.q4.title"),
+        description: t("Faq.q4.description"),
+    },
+    {
+        title: t("Faq.q5.title"),
+        description: t("Faq.q5.description"),
+    },
+    {
+        title: t("Faq.q6.title"),
+        description: t("Faq.q6.description"),
+    },
     ];
     
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -87,7 +90,7 @@ const AskedQuestions: React.FC = () => {
 
     return (
         <div className="asked-questions-container">
-			<h2 className="asked-questions-title">Những câu hỏi thường gặp</h2>
+			<h2 className="asked-questions-title">{t("questions-title")}</h2>
             {questions.map((question, index) => (
                 <Accordion className='accordion-container'
                     key={index}

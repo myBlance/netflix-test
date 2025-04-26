@@ -50,7 +50,7 @@ const ViewTrailer: React.FC<ViewTrailerProps> = ({ id, type, open, onClose }) =>
                         ></iframe>
                     </div>
                 ) : (
-                    <p style={{ padding: 20 }}>Đang tải trailer...</p>
+                    <p style={{ padding: 20 }}>Loading trailer...</p>
                 )}
             </div>
         </div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import '../styles/CastList.css';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface CastMember {
     id: number;
@@ -18,6 +19,7 @@ interface Props {
 const CastList: React.FC<Props> = ({ movieId }) => {
     const [cast, setCast] = useState<CastMember[]>([]);
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const fetchCast = async () => {
@@ -36,7 +38,7 @@ const CastList: React.FC<Props> = ({ movieId }) => {
 
     return (
         <div className="cast-section">
-            <h2 className="cast-title">Diễn viên trong phim</h2>
+            <h2 className="cast-title">{t("cast-tittle")}</h2>
             <div className="cast-list">
                 {cast.map((member) => (
                     <div 
@@ -60,7 +62,7 @@ const CastList: React.FC<Props> = ({ movieId }) => {
                     </div>
                 ))}
                 <div className="cast-viewmore">
-                    <a href={`/movie/${movieId}/cast`} className="view-more">Xem thêm →</a>
+                    <a href={`/movie/${movieId}/cast`} className="view-more">{t("viewmore")}→</a>
                 </div>
             </div>
         </div>

@@ -1,42 +1,44 @@
 import React from 'react';
 import "../styles/Footer.css";
-import Language from './language';
+import Language from './Language';
+import { useTranslation } from 'react-i18next'
 
 const Footer: React.FC = () => {
+    const { t, i18n } = useTranslation();
 
     return (
         <footer className="footer">
             <div className="footer-top">
-                <a href="#">Có câu hỏi? Liên hệ với chúng tôi.</a>
+                <a href="#">{t("contact-link")}</a>
                 <Language/>
             </div>
             <div className="footer-links">
                 <ul>
-                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                    <li><a href="#">Quan hệ đầu tư</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Kiểm tra tốc độ</a></li>
+                    <li><a href="#">{t("faq")}</a></li>
+                    <li><a href="#">{t("investors")}</a></li>
+                    <li><a href="#">{t("privacy")}</a></li>
+                    <li><a href="#">{t("speed-test")}</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Trung tâm trợ giúp</a></li>
-                    <li><a href="#">Công việc</a></li>
-                    <li><a href="#">Tùy chọn cookie</a></li>
-                    <li><a href="#">Thông báo pháp lý</a></li>
+                    <li><a href="#">{t("help-center")}</a></li>
+                    <li><a href="#">{t("jobs")}</a></li>
+                    <li><a href="#">{t("cookies")}</a></li>
+                    <li><a href="#">{t("legal-notice")}</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Tài khoản</a></li>
-                    <li><a href="#">Các phương thức xem</a></li>
-                    <li><a href="#">Thông tin công ty</a></li>
-                    <li><a href="#">Chỉ có trên Netflix</a></li>
+                    <li><a href="#">{t("account")}</a></li>
+                    <li><a href="#">{t("ways-to-watch")}</a></li>
+                    <li><a href="#">{t("company-info")}</a></li>
+                    <li><a href="#">{t("only-on-netflix")}</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Trung tâm truyền thông</a></li>
-                    <li><a href="#">Điều khoản sử dụng</a></li>
-                    <li><a href="#">Liên hệ với chúng tôi</a></li>
+                    <li><a href="#">{t("media-center")}</a></li>
+                    <li><a href="#">{t("terms of use")}</a></li>
+                    <li><a href="#">{t("contact")}</a></li>
                 </ul>
             </div>
             <div className="footer-bottom">
-                <p>Netflix Việt Nam</p>
+                <p>{t("country")}</p>
             </div>
         </footer>
     );

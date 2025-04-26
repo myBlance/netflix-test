@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-
+import { useTranslation } from 'react-i18next'
 
 const Navbar: React.FC = () => {
-
+    const { t, i18n } = useTranslation();
     return (
         <nav className="navbar">
             <Link to="/" className="logo-link">
@@ -12,10 +12,10 @@ const Navbar: React.FC = () => {
             </Link>
             <div className="nav-links">
                 <Link to="/qrpay" className="nav-link">
-                    Thanh toán
+                    {t("pay")}
                 </Link>
                 <Link to="/login" className="nav-link">
-                    Đăng nhập
+                    {t("login")}
                 </Link>
             </div>
         </nav>

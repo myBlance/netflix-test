@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import '../styles/PersonInfor.css';
+import { useTranslation } from 'react-i18next';
+
 
 interface Props {
     person: any;
@@ -36,6 +38,8 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
         return acc;
     }, {});
     
+    const { t } = useTranslation();
+
     return (
         <div className="person-info-container">
             <div className="person-info-main">
@@ -46,11 +50,11 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                         style={{ borderRadius: "10px", width: "100%" }}
                     />
                     <div className="person-infor-content"> 
-                        <p><strong>Ngành nghề nổi bật</strong><br />{viDepartment(person.known_for_department)}</p>
-                        <p><strong>Số lượng tác phẩm</strong><br />{person.combined_credits?.cast?.length || 0}</p>
-                        <p><strong>Giới tính</strong><br />{person.gender === 1 ? "Nữ" : "Nam"}</p>
-                        <p><strong>Ngày sinh</strong><br />{person.birthday} ({calculateAge(person.birthday)} Tuổi)</p>
-                        <p><strong>Quê quán</strong><br />{person.place_of_birth}</p>
+                        <p><strong>{t('person.knownFor')}</strong><br />{viDepartment(person.known_for_department)}</p>
+                        <p><strong>{t('person.totalWorks')}</strong><br />{person.combined_credits?.cast?.length || 0}</p>
+                        <p><strong>{t('person.gender')}</strong><br />{person.gender === 1 ? t('person.female') : t('person.male')}</p>
+                        <p><strong>{t('person.birthday')}</strong><br />{person.birthday} ({calculateAge(person.birthday)} {t('person.age')})</p>
+                        <p><strong>{t('person.placeOfBirth')}</strong><br />{person.place_of_birth}</p>
                     </div>
                 </div>
     
@@ -61,14 +65,14 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                                 <h2 className="person-title">{person.name}</h2>
                                 {person.biography ? (
                                     <p className="biography-text">
-                                        <strong>Tiểu sử</strong><br />
+                                        <strong>{t('person.biography')}</strong><br />
                                         {person.biography}</p>
                                 ) : (
-                                    <p className="biography-text">Tiểu sử đang được cập nhật...</p>
+                                    <p className="biography-text">{t('person.updating')}</p>
                                 )}
                             </div>
                             <div className="person-acting">
-                                <h3>Vai diễn</h3>
+                                <h3>{t('person.roles')}</h3>
 
                                 {Object.entries(groupedByYear)
                                     .sort(([yearA], [yearB]) => yearB.localeCompare(yearA))
@@ -91,7 +95,7 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                                                                     </span>
                                                                     <span className="acting-character">
                                                                         <span className="acting-character">
-                                                                            vai <span style={{ color: "#d85959" }}>{movie.character || "—"}</span>
+                                                                        {t('person.roles')} <span style={{ color: "#d85959" }}>{movie.character || "—"}</span>
                                                                         </span>
                                                                     </span>
                                                                 </div>

@@ -3,6 +3,7 @@ import { Modal, Box, IconButton, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom'; 
 import '../styles/Movie.css'; 
+import { useTranslation } from 'react-i18next'
 
 interface MovieProps {
     movie: {
@@ -19,6 +20,7 @@ interface MovieProps {
 const Movie: React.FC<MovieProps> = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate(); 
+    const { t } = useTranslation();
 
     const toggleModal = (open: boolean) => () => {
         setIsModalOpen(open);
@@ -69,7 +71,7 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
                             className="watch-button"
                             onClick={handleWatchNow} 
                         >
-                            ▶ Xem ngay
+                            ▶ {t("whatchnow")}
                         </Button>
                     </Box>
                 </Box>

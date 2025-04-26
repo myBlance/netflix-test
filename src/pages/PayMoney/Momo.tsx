@@ -4,6 +4,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../../styles/SetupMomo.css';
 import { useNavigate, Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 interface Plan {
     name: string;
@@ -11,7 +12,7 @@ interface Plan {
 }
 
 interface SetupMomoProps {
-    selectedPlan?: Plan; // cho phép undefined để fallback sang localStorage
+    selectedPlan?: Plan;
     onChangePlan?: () => void;
 }
 
@@ -20,11 +21,11 @@ const SetupMomo: React.FC<SetupMomoProps> = ({ selectedPlan }) => {
     const [phone, setPhone] = useState('');
     const [plan, setPlan] = useState<Plan>({ name: '', price: 0 });
     const navigate = useNavigate();
-    
+    const { t } = useTranslation();
+
     const handleChangePlan = () => {
         navigate('/editplan', { state: { from: '/Momo' } });
     };
-         
 
     useEffect(() => {
         if (selectedPlan) {
@@ -43,17 +44,19 @@ const SetupMomo: React.FC<SetupMomoProps> = ({ selectedPlan }) => {
                 <Link to="/" className="logo-link">
                     <img src="/assets/netflix.svg" alt="Netflix Logo" className="logo" />
                 </Link>
-                <Link to="/login" className="nav-link">Đăng nhập</Link>
+                <Link to="/login" className="nav-link">{t("login")}</Link>
             </div>
             <div className="payMomo">
                 <div className="momo-container">
-                    <div className="pay-label">BƯỚC 3 TRONG 3</div>
-                    <h2 className="pay-title">Thiết lập Momo</h2>
+                    <div className="pay-label">{t("step.step3.title")}</div>
+                    <h2 className="pay-title">{t("setup")} Momo</h2>
                     <img src="/assets/momo.png" alt="MoMo" className="momo-logo" />
-                    <p className="instruction">Nhập số điện thoại MoMo của bạn.</p>
+                    
+                    <p className="instruction">{t("setup_momo.enter_phone")}</p>
                     <p className="sub-instruction">
-                        Số của bạn cũng sẽ được sử dụng nếu bạn quên mật khẩu và cho các tin nhắn tài khoản quan trọng. Có thể áp dụng phí SMS.
+                        {t("setup_momo.phone_note")}
                     </p>
+
                     <PhoneInput
                         country={'vn'}
                         value={phone}
@@ -63,7 +66,7 @@ const SetupMomo: React.FC<SetupMomoProps> = ({ selectedPlan }) => {
                             name: 'phone',
                             required: true,
                             autoFocus: true,
-                            placeholder: 'Mobile number'
+                            placeholder: t("setup_momo.phone_placeholder")
                         }}
                         containerStyle={{ width: '100%', marginBottom: '20px' }}
                         inputStyle={{ width: '100%', height: '48px', fontSize: '16px' }}
@@ -72,24 +75,28 @@ const SetupMomo: React.FC<SetupMomoProps> = ({ selectedPlan }) => {
 
                     <div className="plan-info">
                         <div>
-                            <strong>{plan.price.toLocaleString()} ₫/tháng</strong>
+                            <strong>{plan.price.toLocaleString()} ₫/{t("month")}</strong>
                             <div className="plan-type">{plan.name}</div>
                         </div>
                         
                         <button className="change-btn" onClick={handleChangePlan}>
-                            Thay đổi
+                            {t("change")}
                         </button>
-                        
                     </div>
 
                     <div className="terms-text">
-                        Bằng cách chọn vào ô dưới đây, bạn đồng ý với <a href="#">Điều khoản sử dụng</a>,{' '}
-                        <a href="#">Chính sách bảo mật</a> và bạn trên 18 tuổi. Netflix sẽ tự động tiếp tục gói và trừ tiền ({plan.price.toLocaleString()}₫/tháng) cho đến khi bạn huỷ.
+                        <Trans 
+                            i18nKey="setup_momo.terms_text" 
+                            values={{ price: plan.price.toLocaleString() }} 
+                            components={{
+                                termsLink: <a href="#" />,
+                                privacyLink: <a href="#" />
+                            }}
+                        />
                     </div>
-
                     <div className="terms">
                         <Checkbox checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                        <span>Tôi đồng ý</span>
+                        <span>{t("agree_text")}</span>
                     </div>
 
                     <Button
@@ -98,10 +105,10 @@ const SetupMomo: React.FC<SetupMomoProps> = ({ selectedPlan }) => {
                         className="start-btn"
                         disabled={!agree || !phone}
                     >
-                        Bắt đầu thành viên
+                        {t("start_membership")}
                     </Button>
 
-                    <p className="note">Bạn sẽ được chuyển sang MoMo để hoàn tất thanh toán.</p>
+                    <p className="note">{t("setup_momo.redirect_note")}</p>
                 </div>
             </div>
         </div>

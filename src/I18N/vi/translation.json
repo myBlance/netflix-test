@@ -1,6 +1,182 @@
 {
+    "home": "Trang chủ",
     "login": "Đăng nhập",
     "email": "Email hoặc số điện thoại",
-    "password": "Mật khẩu"
+    "password": "Mật khẩu",
+    "btn-code": "Sử dụng mã đăng nhập",
+    "forgot-password": "Bạn quên mật khẩu",
+    "terms": "Ghi nhớ tôi",
+    "signup-text": "Bạn mới sử dụng Netflix",
+    "Sign up now": "Đăng ký ngay",
+    "captcha-note": "Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot.",
+    "learn-more": "Tìm hiểu thêm.",
+    "contact-link": "Có câu hỏi? Liên hệ với chúng tôi.",
+    "faq": "Câu hỏi thường gặp",
+    "investors": "Quan hệ đầu tư",
+    "privacy": "Chính sách bảo mật",
+    "speed-test": "Kiểm tra tốc độ",
+    "help-center": "Trung tâm trợ giúp",
+    "jobs": "Công việc",
+    "cookies": "Tùy chọn cookie",
+    "legal-notice": "Thông báo pháp lý",
+    "account": "Tài khoản",
+    "ways-to-watch": "Các phương thức xem",
+    "company-info": "Thông tin công ty",
+    "only-on-netflix": "Chỉ có trên Netflix",
+    "media-center": "Trung tâm truyền thông",
+    "terms of use": "Điều khoản sử dụng",
+    "contact": "Liên hệ với chúng tôi",
+    "country": "Netflix Việt Nam",
+    "pay": "Thanh toán",
+    "email address":"Địa chỉ Email",
+    "emailformtitle": "Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.",
+    "started": "Băt đầu",
+    "whatchnow": "Xem ngay",
+    "questions-title":"Những câu hỏi thường gặp",
+    "cast-tittle":"Diễn viên trong phim",
+    "movie-title":"Xu hướng hiện nay",
+    "score":"Điểm người dùng",
+    "show-title":"Tổng quan",
+    "show-trailer":"Xem giới thiệu",
+    "setup":"Thiết lập",
+    "change": "Thay đổi",
+    "month": "tháng",
+    "start_membership": "Bắt đầu thành viên",
+    "agree_text":"Tôi đồng ý",
+    "viewmore":"Xem thêm",
+    "setup_momo": {
+        "enter_phone": "Nhập số điện thoại MoMo của bạn.",
+        "phone_note": "Số của bạn cũng sẽ được sử dụng nếu bạn quên mật khẩu và cho các tin nhắn tài khoản quan trọng. Có thể áp dụng phí SMS.",
+        "phone_placeholder": "Số điện thoại",
+        "terms_text": "Bằng cách chọn vào ô dưới đây, bạn đồng ý với <termsLink>Điều khoản sử dụng</termsLink>, <privacyLink>Chính sách bảo mật</privacyLink> và bạn trên 18 tuổi. Netflix sẽ tự động tiếp tục gói và trừ tiền ({{price}}₫/tháng) cho đến khi bạn huỷ.",
+        "redirect_note": "Bạn sẽ được chuyển sang MoMo để hoàn tất thanh toán."
+    },
+    "setup_credit": {
+        "international_payment_notice": "Thanh toán của bạn sẽ được xử lý quốc tế. Có thể áp dụng thêm phí ngân hàng.",
+        "terms_text": "Bằng cách chọn vào ô dưới đây, bạn đồng ý với <termsLink>Điều khoản sử dụng</termsLink>, <privacyLink>Chính sách bảo mật</privacyLink> và xác nhận bạn trên 18 tuổi. Netflix sẽ tự động tiếp tục gói của bạn và trừ tiền thành viên (hiện tại {{price}}₫/tháng) vào phương thức thanh toán cho đến khi bạn huỷ. Bạn có thể huỷ bất cứ lúc nào để tránh các khoản phí sau này.",
+        "redirect_note": "Bạn sẽ được chuyển sang Credit để hoàn tất thanh toán."
+    },
+    "Faq": {
+        "q1": {
+        "title": "Netflix là gì?",
+        "description": "Netflix là dịch vụ phát trực tuyến cung cấp nhiều loại chương trình truyền hình, phim ảnh, anime, tài liệu, và nhiều hơn nữa trên hàng nghìn thiết bị kết nối internet. Xem bao nhiêu tùy thích, bất cứ lúc nào bạn muốn, không có quảng cáo – tất cả chỉ với một mức giá tháng thấp. Luôn có điều gì đó mới để khám phá, và các chương trình TV và phim mới được thêm vào mỗi tuần!"
+        },
+        "q2": {
+        "title": "Netflix có giá bao nhiêu?",
+        "description": "Các gói dịch vụ dao động từ $6.99 đến $19.99 mỗi tháng. Không có chi phí phát sinh, không hợp đồng."
+        },
+        "q3": {
+        "title": "Tôi có thể xem ở đâu?",
+        "description": "Xem ngay lập tức từ bất kỳ thiết bị kết nối internet nào có ứng dụng Netflix, hoặc phát trực tuyến từ laptop, máy tính bảng hoặc điện thoại của bạn."
+        },
+        "q4": {
+        "title": "Làm thế nào để hủy đăng ký?",
+        "description": "Netflix rất linh hoạt. Không có hợp đồng rườm rà và cam kết dài hạn. Bạn có thể dễ dàng hủy tài khoản trực tuyến chỉ với hai cú click."
+        },
+        "q5": {
+        "title": "Tôi có thể xem gì trên Netflix?",
+        "description": "Netflix có một thư viện phong phú các phim điện ảnh, tài liệu, chương trình truyền hình, anime, các bộ phim gốc đoạt giải thưởng của Netflix và nhiều hơn nữa."
+        },
+        "q6": {
+        "title": "Netflix có phù hợp cho trẻ em không?",
+        "description": "Trải nghiệm Netflix dành cho trẻ em được bao gồm trong gói thành viên của bạn, giúp phụ huynh kiểm soát trong khi trẻ em thưởng thức các chương trình và phim dành cho gia đình trong không gian riêng của chúng."
+        }
+    },
+
+    "person": {
+        "knownFor": "Ngành nghề nổi bật",
+        "totalWorks": "Số lượng tác phẩm",
+        "gender": "Giới tính",
+        "male": "Nam",
+        "female": "Nữ",
+        "birthday": "Ngày sinh",
+        "age": "Tuổi",
+        "placeOfBirth": "Quê quán",
+        "biography": "Tiểu sử",
+        "updating": "Tiểu sử đang được cập nhật...",
+        "roles": "Vai diễn"
+    },
+
+    "reasons": {
+        "title": "Nhiều lý do hơn để tham gia",
+        "watchOnTv": "Thưởng thức trên TV của bạn",
+        "watchOnTvDesc": "Xem trên Smart TV, Playstation, Xbox, Chromecast, Apple TV, đầu phát Blu-ray, và nhiều hơn nữa.",
+        "downloadShows": "Tải xuống chương trình để xem ngoại tuyến",
+        "downloadShowsDesc": "Lưu lại chương trình yêu thích và luôn có thứ để xem bất cứ lúc nào.",
+        "watchEverywhere": "Xem mọi nơi",
+        "watchEverywhereDesc": "Truyền phát vô hạn phim và chương trình TV trên điện thoại, máy tính bảng, laptop và TV.",
+        "createProfiles": "Tạo hồ sơ cho trẻ em",
+        "createProfilesDesc": "Gửi các bé vào những cuộc phiêu lưu với các nhân vật yêu thích trong không gian được tạo riêng cho chúng — miễn phí với thẻ thành viên của bạn."
+    },
+
+    "step": {
+        "password": "Bước 1: Nhập mật khẩu để tiếp tục",
+        "choosePlan": "Chọn gói dịch vụ.",
+        "chooseRightPlan": "Chọn gói phù hợp với bạn.",
+        "planDescription": "Thông tin chi tiết từng gói để bạn dễ lựa chọn.",
+        "choosePayment": "Chọn phương thức thanh toán",
+        "paymentDescription": "Thanh toán của bạn được mã hóa và bạn có thể thay đổi bất kỳ lúc nào.",
+        "step1":{
+            "title":"BƯỚC 1 TRONG 3",
+            "heading": "Chào mừng bạn quay lại! Tham gia Netflix thật đơn giản.",
+            "content": "Chỉ cần nhập mật khẩu và bạn sẽ được xem ngay lập tức."
+        },
+        "step2": {
+            "title": "BƯỚC 2 TRONG 3",
+            "heading": "Chọn gói dịch vụ của bạn.",
+            "benefits": {
+            "cancel": "Không ràng buộc, hủy bất cứ lúc nào.",
+            "fullAccess": "Xem toàn bộ nội dung Netflix với một mức giá thấp.",
+            "noAds": "Không quảng cáo, không phụ phí."
+            }
+        },
+        "step3": {
+            "title": "BƯỚC 3 TRONG 3",
+            "heading": "Chọn gói phù hợp với bạn",
+            "pricePerMonth": "Giá mỗi tháng",
+            "quality": "Chất lượng video và âm thanh",
+            "resolution": "Độ phân giải",
+            "spatialAudio": "Âm thanh vòm (trải nghiệm sống động)",
+            "available": "Có sẵn",
+            "devices": "Thiết bị hỗ trợ",
+            "watchDevices": "Số thiết bị có thể xem cùng lúc",
+            "downloadDevices": "Số thiết bị có thể tải xuống"
+        },
+        "step4": {
+            "title": "BƯỚC 3 TRONG 3",
+            "safe": "An toàn cho sự an tâm.",
+            "cancel": "Hủy trực tuyến dễ dàng.",
+            "encryption": "Được mã hóa đầu cuối",
+            "creditCard": "Thẻ tín dụng",
+            "eWallet": "Ví điện tử"
+        }
+    },
+    "plan": {
+        "mobile": {
+        "name": "Mobile",
+        "quality": "Trung bình",
+        "devices": "Điện thoại, máy tính bảng"
+        },
+        "basic": {
+        "name": "Basic",
+        "quality": "Tốt",
+        "devices": "TV, máy tính, điện thoại, máy tính bảng"
+        },
+        "standard": {
+        "name": "Standard",
+        "quality": "Rất tốt",
+        "devices": "TV, máy tính, điện thoại, máy tính bảng"
+        },
+        "premium": {
+        "name": "Premium",
+        "quality": "Tuyệt vời",
+        "devices": "TV, máy tính, điện thoại, máy tính bảng"
+        }
+    },
+    "register":{
+        "success":"Hoàn tất tất cả các bước – bạn đã đăng ký xong!",
+        "next": "Tiếp theo"
+    }
 }
+
   

@@ -1,23 +1,26 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { useTranslation } from 'react-i18next'
 
 interface StepTwoProps {
     onNext: () => void;
 }
 
 const StepOne: React.FC<StepTwoProps> = ({ onNext }) => {
+    const { t, i18n } = useTranslation()
+
     return (
         <div className="step2-container">
             <div className="step2-check-icon">✔</div>
-            <div className="step-title">BƯỚC 2 TRONG 3</div>
-            <div className="step-heading">Chọn gói dịch vụ của bạn.</div>
+            <div className="step-title">{t("step.step2.title")}</div>
+            <div className="step-heading">{t("step.step2.heading")}</div>
             <ul className="step2-list">
-                <li>Không ràng buộc, hủy bất cứ lúc nào.</li>
-                <li>Xem toàn bộ nội dung Netflix với một mức giá thấp.</li>
-                <li>Không quảng cáo, không phụ phí.</li>
+                <li>{t("step.step2.benefits.cancel")}</li>
+                <li>{t("step.step2.benefits.fullAccess")}</li>
+                <li>{t("step.step2.benefits.noAds")}</li>
             </ul>
             <Button onClick={onNext} className="step2-next-button">
-                Tiếp theo
+                {t("next")}
             </Button>
         </div>
     );

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import "../styles/Show.css";
 import ViewTrailer from "./ViewTrailer"; 
+import { useTranslation } from 'react-i18next';
 
 interface ShowProps {
     id: number;
@@ -12,15 +13,30 @@ interface ShowProps {
 const Show: React.FC<ShowProps> = ({ id, type }) => {
     const [show, setShow] = useState<any>(null);
     const [showTrailer, setShowTrailer] = useState(false);
+    const { t, i18n } = useTranslation();
 
 
     useEffect(() => {
         async function fetchShowDetails() {
-            const response = await axios.get(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=vi`);
-            setShow(response.data);
+            try {
+                const response = await axios.get(
+                    `${BASE_URL}/${type}/${id}`,
+                    {
+                        params: {
+                            api_key: API_KEY,
+                            language: i18n.language,
+                            
+                        },
+                    }
+                );
+                setShow(response.data);
+            } catch (error) {
+                console.error('Error fetching show details:', error);
+            }
         }
         fetchShowDetails();
-    }, [id, type]);
+    }, [id, type, i18n.language]);
+    
 
     if (!show) {
         return <div className="show-loading">Loading...</div>;
@@ -72,11 +88,11 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                                 </svg>
                             </div>
                             <div>
-                                <div><strong>Điểm người dùng</strong></div>
+                                <div><strong>{t("score")}</strong></div>
                             </div>
                         </div>
                         <p className="show-tagline">{show.tagline}</p>
-                        <h2>Tổng quan</h2>
+                        <h2>{t("show-title")}</h2>
                         <p className="show-overview">{show.overview}</p>
                         <div className="show-credits">
                             {show.credits?.crew?.slice(0, 3).map((crew: any) => (
@@ -89,7 +105,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                         <button 
                             className="play-trailer-button"
                             onClick={() => setShowTrailer(true)} // show trailer dạng Modal
-                        >▶ Xem giới thiệu
+                        >▶ {t("show-trailer")}
                         </button>
                     </div>
                 </div>

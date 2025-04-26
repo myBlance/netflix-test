@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../services/tmdb";
 import Movie from "./Movie";
 import "../styles/MovieList.css";
+import { useTranslation } from 'react-i18next';
 
 interface Movie {
     id: number;
@@ -19,14 +20,23 @@ interface Movie {
 const MovieList: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
     const [startIndex, setStartIndex] = useState(0);
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=vi`);
+            const response = await axios.get(
+                `${BASE_URL}/trending/movie/day`,
+                {
+                  params: {
+                    api_key: API_KEY,
+                    language: i18n.language // Thêm language vào đây
+                  }
+                }
+              );
             setMovies(response.data.results);
         }
         fetchMovies();
-    }, []);
+    }, [i18n.language]);
 
     const handleNext = () => {
         setStartIndex((prev) => {
@@ -44,7 +54,7 @@ const MovieList: React.FC = () => {
 
     return (
         <div className="movie-list">
-            <h2>Xu hướng hiện nay</h2>
+            <h2>{t("movie-title")}</h2>
             <div className="movie-list-controls">
                 <button className="prev-button" onClick={handlePrev}>
                     <ArrowBackIosNewIcon />

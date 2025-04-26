@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import '../../styles/SetupVisa.css';
 import { useNavigate, Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 interface Plan {
     name: string;
@@ -26,7 +27,8 @@ const SetupCreditCard: React.FC<SetupCreditCardProps> = ({ selectedPlan}) => {
     const [plan, setPlan] = useState<Plan>({ name: '', price: 0 });
 
     const navigate = useNavigate();
-    
+    const { t } = useTranslation();
+
     const handleChangePlan = () => {
         navigate('/editplan', { state: { from: '/Visa' } });
     };
@@ -48,12 +50,12 @@ const SetupCreditCard: React.FC<SetupCreditCardProps> = ({ selectedPlan}) => {
                     <Link to="/" className="logo-link">
                         <img src="/assets/netflix.svg" alt="Netflix Logo" className="logo" />
                     </Link>
-                    <Link to="/login" className="nav-link">Đăng nhập</Link>
+                    <Link to="/login" className="nav-link">{t("login")}</Link>
                 </div>
             <div className="setupCard">
                 <div className="container">
-                    <div className="step-label">BƯỚC 3 TRONG 3</div>
-                    <h2 className="title">Thiết lập thẻ tín dụng hoặc thẻ ghi nợ</h2>
+                    <div className="step-label">{t("step.step3.title")}</div>
+                    <h2 className="title">{t("setup")} Master Card</h2>
                     <div className='logo-container'>
                         <img src="/assets/visa.png" alt="Visa" className="logo" />
                         <img src="/assets/mastercard.png" alt="MasterCard" className="logo" />
@@ -109,32 +111,34 @@ const SetupCreditCard: React.FC<SetupCreditCardProps> = ({ selectedPlan}) => {
                 
                     <div className="plan-info">
                         <div>
-                            <strong>{plan.price.toLocaleString()} ₫/tháng</strong>
+                            <strong>{plan.price.toLocaleString()} ₫/{t("month")}</strong>
                             <div className="plan-type">{plan.name}</div>
                         </div>
                         
                         <button className="change-btn" onClick={handleChangePlan}>
-                            Thay đổi
+                            {t("change")}
                         </button>
                         
                     </div>
 
                     <div className="terms-text">
-                        <span>
-                            Your payments will be processed internationally. Addition bank fees may apply.
-                        </span>
+                        <span>{t("setup_credit.international_payment_notice")}</span>
                     </div>
 
                     <div className="terms-text">
-                        By checking the checkbox below, you agree to our <a href="#">Terms of Use</a>,{' '}
-                        <a href="#">Privacy Statement</a>, and that you are over 18. Netflix will automatically continue
-                        your membership and charge the membership fee (currently {plan.price.toLocaleString()}₫/month) to your payment method until you cancel.
-                        You may cancel at any time to avoid future charges.
+                        <Trans 
+                            i18nKey="setup_credit.terms_text" 
+                            values={{ price: plan.price.toLocaleString() }} 
+                            components={{
+                            termsLink: <a href="#" />,
+                            privacyLink: <a href="#" />
+                            }} 
+                        />
                     </div>
 
                     <div className="terms">
                         <Checkbox checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                        <span>Tôi đồng ý</span>
+                        <span>{t("agree_text")}</span>
                     </div>
                 
                     <Button
@@ -143,10 +147,10 @@ const SetupCreditCard: React.FC<SetupCreditCardProps> = ({ selectedPlan}) => {
                         className="start-btn"
                         disabled={!agree || !cardNumber || !expiryDate || !cvv || !cardHolder}
                     >
-                        Bắt đầu thành viên
+                        {t("start_membership")}
                     </Button>
 
-                    <p className="note">You’ll be sent to Credit to complete payment.</p>
+                    <p className="note">{t("setup_credit.redirect_note")}</p>
                 </div>
             </div>
         </div>

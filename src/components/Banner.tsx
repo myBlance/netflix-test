@@ -9,21 +9,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import LinearProgress from '@mui/material/LinearProgress';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
+import { useTranslation } from 'react-i18next';
 
 const Banner: React.FC = () => {
     const [movies, setMovies] = useState<any[]>([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [progress, setProgress] = useState([0, 0, 0]);
     const [playing, setPlaying] = useState(true);
-    
+    const { i18n } = useTranslation();
+
     useEffect(() => {
         async function fetchMovies() {
-            const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
-            setMovies(response.data.results.slice(0, 3)); // Lấy 3 phim đầu tiên làm slide
-    }
-
+          const response = await axios.get(
+            `${BASE_URL}/trending/movie/day`,
+            {
+              params: {
+                api_key: API_KEY,
+                language: i18n.language // Thêm language vào đây
+              }
+            }
+          );
+          setMovies(response.data.results.slice(0, 3));
+        }
+    
         fetchMovies();
-    }, []);
+      }, [i18n.language]); 
 
     useEffect(() => {
         if (progress[currentSlide] === 100) {

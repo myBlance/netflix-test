@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { useTranslation, Trans } from 'react-i18next'
 
 type StepOneProps = {
     onNext: () => void;
@@ -9,19 +10,24 @@ type StepOneProps = {
 
 const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
     const [password, setPassword] = useState('');
+    const { t, i18n } = useTranslation()
 
     return (
         <div className="step1-container">
             <div className="step-title">
-                BƯỚC 1 TRONG 3
+                {t("step.step1.title")}
             </div>
 
             <div className="step-heading">
-                Chào mừng bạn quay lại! <br /> Tham gia Netflix thật đơn giản.
+                <Trans i18nKey="step1.heading">
+                   {t("step.step1.heading")}
+                </Trans>    
             </div>
+
             <div className="step1-content">
-                Chỉ cần nhập mật khẩu và bạn sẽ được xem ngay lập tức.
+                {t("step.step1.content")}
             </div>
+
 
             <div className="email-info">
                 <p>Email</p>
@@ -40,18 +46,23 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
             />
             
             <div className="forgot-password">
-                Bạn quên mật khẩu?
+                {t("forgot-password")}
             </div>
 
             <Button
-                fullWidth
+                
                 variant="contained"
-                sx={{ backgroundColor: 'red', color: '#fff' }}
+                sx={{ 
+                    backgroundColor: 'red', 
+                    color: '#fff',  
+                    width:'150px',
+                    height:'50px', 
+                }}
                 onClick={onNext}
                 disabled={!password}
                 className="next-button"
             >
-                Tiếp theo
+                {t("register.next")}
             </Button>
         </div>
     );

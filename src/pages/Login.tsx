@@ -17,7 +17,7 @@ const Login = () => {
         setShowPassword(!showPassword);
     };
 
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <div className="login-page">     
@@ -123,8 +123,8 @@ const Login = () => {
 
                         <button className="btn-login">{t("login")}</button>
                         <div className="divider">{t("or")}</div>
-                        <button className="btn-code">Sử dụng mã đăng nhập</button>
-                        <a href="#" className="forgot-password">Bạn quên mật khẩu?</a>
+                        <button className="btn-code">{t("btn-code")}</button>
+                        <a href="#" className="forgot-password">{t("forgot-password")}?</a>
 
                         <div className="terms">
                             <Checkbox 
@@ -138,15 +138,15 @@ const Login = () => {
                                     },
                                 }}    
                             />
-                            <span>Ghi nhớ tôi</span>
+                            <span>{t("terms")}</span>
                         </div>
 
-                        <p className="signup-text">Bạn mới sử dụng Netflix? 
-                            <a href="#">Đăng ký ngay.</a>
+                        <p className="signup-text">{t("signup-text")}? 
+                            <a href="#">{t("Sign up now")}.</a>
                         </p>
                         <div className="captcha-note">
-                            <p>Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot.</p>
-                            <a href="#">Tìm hiểu thêm.</a>
+                            <p>{t("captcha-note")}</p>
+                            <a href="#">{t("learn-more")}</a>
                         </div>
                     </form>
                 </div>

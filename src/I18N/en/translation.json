@@ -1,6 +1,181 @@
 {
+    "home": "Home",
     "login": "Sign In",
-    "email": "Email or mobile number",
-    "password": "Password"
-    
+    "email": "Email or phone number",
+    "password": "Password",
+    "btn-code": "Use login code",
+    "forgot-password": "Forgot password",
+    "terms": "Remember me",
+    "signup-text": "New to Netflix?",
+    "Sign up now": "Sign up now",
+    "captcha-note": "This page is protected by Google reCAPTCHA to ensure you're not a bot.",
+    "learn-more": "Learn more.",
+    "contact-link": "Questions? Contact us.",
+    "faq": "FAQ",
+    "investors": "Investor Relations",
+    "privacy": "Privacy Policy",
+    "speed-test": "Speed Test",
+    "help-center": "Help Center",
+    "jobs": "Jobs",
+    "cookies": "Cookie Preferences",
+    "legal-notice": "Legal Notices",
+    "account": "Account",
+    "ways-to-watch": "Ways to Watch",
+    "company-info": "Corporate Information",
+    "only-on-netflix": "Only on Netflix",
+    "media-center": "Media Center",
+    "terms of use": "Terms of Use",
+    "contact": "Contact Us",
+    "country": "Netflix Vietnam",
+    "pay": "Pay",
+    "email address": "Email Address",
+    "emailformtitle": "Ready to watch? Enter your email to create or restart your membership.",
+    "started": "Get Started",
+    "whatchnow": "Watch Now",
+    "questions-title": "Frequently Asked Questions",
+    "cast-tittle": "Cast",
+    "movie-title": "Trending Now",
+    "score": "User Rating",
+    "show-title": "Overview",
+    "show-trailer": "Watch Trailer",
+    "setup": "Setup",
+    "change": "Change",
+    "month": "month",
+    "start_membership": "Start Membership",
+    "agree_text": "I Agree",
+    "viewmore":"View more",
+    "setup_momo": {
+        "enter_phone": "Enter your MoMo phone number.",
+        "phone_note": "Your number will also be used if you forget your password and for important account messages. SMS fees may apply.",
+        "phone_placeholder": "Phone number",
+        "terms_text": "By checking the box below, you agree to the <termsLink>Terms of Use</termsLink>, <privacyLink>Privacy Policy</privacyLink> and confirm you are over 18 years old. Netflix will automatically continue your plan and charge ({{price}}₫/month) until you cancel.",
+        "redirect_note": "You will be redirected to MoMo to complete your payment."
+    },
+    "setup_credit": {
+        "international_payment_notice": "Your payment will be processed internationally. Additional bank fees may apply.",
+        "terms_text": "By checking the box below, you agree to the <termsLink>Terms of Use</termsLink>, <privacyLink>Privacy Policy</privacyLink> and confirm you are over 18 years old. Netflix will automatically continue your membership and charge your payment method (currently {{price}}₫/month) until you cancel. You can cancel anytime to avoid future charges.",
+        "redirect_note": "You will be redirected to Credit to complete your payment."
+    },
+    "Faq": {
+        "q1": {
+        "title": "What is Netflix?",
+        "description": "Netflix is a streaming service that offers a wide variety of TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. Watch as much as you want, whenever you want, without a single commercial – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"
+        },
+        "q2": {
+        "title": "How much does Netflix cost?",
+        "description": "Plans range from $6.99 to $19.99 per month. No extra costs, no contracts."
+        },
+        "q3": {
+        "title": "Where can I watch?",
+        "description": "Watch instantly on any internet-connected device that offers the Netflix app, or stream from your laptop, tablet, or phone."
+        },
+        "q4": {
+        "title": "How do I cancel?",
+        "description": "Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in just two clicks."
+        },
+        "q5": {
+        "title": "What can I watch on Netflix?",
+        "description": "Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more."
+        },
+        "q6": {
+        "title": "Is Netflix good for kids?",
+        "description": "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space."
+        }
+    },
+    "person": {
+        "knownFor": "Known for",
+        "totalWorks": "Total works",
+        "gender": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "birthday": "Birthday",
+        "age": "Age",
+        "placeOfBirth": "Place of birth",
+        "biography": "Biography",
+        "updating": "Biography is being updated...",
+        "roles": "Roles"
+    },
+    "reasons": {
+        "title": "More reasons to join",
+        "watchOnTv": "Enjoy on your TV",
+        "watchOnTvDesc": "Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
+        "downloadShows": "Download shows to watch offline",
+        "downloadShowsDesc": "Save your favorites and always have something to watch.",
+        "watchEverywhere": "Watch everywhere",
+        "watchEverywhereDesc": "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.",
+        "createProfiles": "Create profiles for kids",
+        "createProfilesDesc": "Send kids on adventures with their favorite characters in a space made just for them — free with your membership."
+    },
+  
+    "step": {
+        "password": "Step 1: Enter your password to continue",
+        "choosePlan": "Choose your plan.",
+        "chooseRightPlan": "Pick the plan that's right for you.",
+        "planDescription": "Detailed information about each plan to help you choose easily.",
+        "choosePayment": "Choose your payment method",
+        "paymentDescription": "Your payment is encrypted and you can change it anytime.",
+        "step1": {
+            "title": "STEP 1 OF 3",
+            "heading": "Welcome back! Joining Netflix is easy.",
+            "content": "Just enter your password and you'll start watching instantly."
+        },
+        "step2": {
+            "title": "STEP 2 OF 3",
+            "heading": "Choose your plan.",
+            "benefits": {
+            "cancel": "No commitments, cancel anytime.",
+            "fullAccess": "Get full access to all of Netflix for one low price.",
+            "noAds": "No ads, no extra fees."
+            }
+        },
+        "step3": {
+            "title": "STEP 3 OF 3",
+            "heading": "Pick the plan that's right for you",
+            "pricePerMonth": "Price per month",
+            "quality": "Video and audio quality",
+            "resolution": "Resolution",
+            "spatialAudio": "Spatial audio (immersive experience)",
+            "available": "Available",
+            "devices": "Supported devices",
+            "watchDevices": "Number of devices you can watch on at the same time",
+            "downloadDevices": "Number of devices you can download to"
+        },
+        "step4": {
+            "title": "STEP 3 OF 3",
+            "safe": "Safe and secure.",
+            "cancel": "Easily cancel online.",
+            "encryption": "End-to-end encryption",
+            "creditCard": "Credit Card",
+            "eWallet": "E-wallet"
+        }
+    },
+    "plan": {
+        "mobile": {
+            "name": "Mobile",
+            "quality": "Fair",
+            "devices": "Phone, tablet"
+        },
+        "basic": {
+            "name": "Basic",
+            "quality": "Good",
+            "devices": "TV, computer, phone, tablet"
+        },
+        "standard": {
+            "name": "Standard",
+            "quality": "Very Good",
+            "devices": "TV, computer, phone, tablet"
+        },
+        "premium": {
+            "name": "Premium",
+            "quality": "Excellent",
+            "devices": "TV, computer, phone, tablet"
+        }
+    },
+    "register": {
+        "success": "All steps completed – you’re all set!",
+        "next": "Next"
+    }
 }
+  
+
+
