@@ -9,6 +9,7 @@
 }
   
 .email-form-title {
+    padding: 0 50px;
     font-size: 17px;
     margin-bottom: 20px;
     font-weight: normal;
@@ -16,11 +17,11 @@
   
 .email-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     max-width: 600px;
     margin: 0 auto;
-    gap: 20px
+    gap: 8%;
 }
   
   
@@ -37,6 +38,7 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    border-radius: 9999px;
 }
   
 .email-button:hover {
@@ -45,10 +47,6 @@
 }
 
 @media (max-width: 1024px) {
-    .email-form {
-      flex-direction: row;
-    }
-  
     .email-input {
       border-radius: 9999px;
       margin: 0;
@@ -63,8 +61,12 @@
 }
 
 @media (max-width: 768px) {
+    .email-form {
+        flex-direction: column;
+    }
+
     .email-button {
-        margin-top: 0;
+        margin-top: 10px;
         margin-left: 0.5rem;
         border-radius: 9999px;
     }

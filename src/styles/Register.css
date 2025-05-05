@@ -9,12 +9,12 @@
     box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
-.navbar .logo-link img {
+.register .navbar .logo-link img {
     width: 170px;
     height: 120px;
 }
 
-.navbar .nav-link {
+.register .navbar .nav-link {
     color: #333;
     font-size: 20px;
     font-weight: bold;

@@ -21,7 +21,7 @@ const Language: React.FC = () => {
                 displayEmpty
                 inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
                 sx={{backgroundColor: '#333',
-                    borderRadius: '4px',
+                    borderRadius: '50px',
                     border: '2px solid #fff',
                     color: '#fff',
                     '& .MuiSelect-icon': {

@@ -27,7 +27,7 @@
     display: flex;
     padding: 40px 0;
     gap: 18px;
-    width: calc(7 * 200px);
+    width: auto;
 }
 
 .movie-slide {

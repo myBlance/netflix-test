@@ -6,12 +6,24 @@
 .background {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/assets/the_netflix_login_background.jpg') no-repeat center center fixed;
+        url('/assets/the_netflix_login_background.jpg') no-repeat center center ;
     background-size: cover;
     justify-content: center;   
     height: 130vh;
     align-items:center;                   
 }
+
+
+.background .navbar {
+    height: 90px;
+}
+
+.navbar .logo-link img {
+    padding: 20px;
+    height: 120px;
+    object-fit: contain;
+}
+
 .login {
     font-family: Arial, Helvetica, sans-serif;
     color: #fff; 
@@ -25,7 +37,7 @@
   
 .login-container {
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 60px 68px 40px;
+    padding: 20px 68px 40px;
     border-radius: 4px;
     max-width: 450px; 
     box-sizing: border-box;
