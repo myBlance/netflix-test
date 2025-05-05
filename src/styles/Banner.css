@@ -113,6 +113,16 @@
     transform: scale(1.1); 
 }
 
+@media (max-width: 1024px) {
+  .banner-content .email-form {
+    display: none;
+  }
+
+  .banner-content p {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .banner {
     height: 400px;
