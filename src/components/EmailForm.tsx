@@ -73,6 +73,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                             },
                             '& .MuiInputBase-root': {
                                 color: '#fff', 
+                                
                             },
                         }}
                     />
