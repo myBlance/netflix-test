@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
@@ -44,31 +43,36 @@ const StepFour: React.FC<StepFourProps> = ({ label, description }) => {
             </div>
 
             <div className="step4-button">
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={handlePayVisa}
-                    startIcon={<CreditCardIcon />}
-                    endIcon={<ArrowForwardIosIcon sx={{ ml: "155px" }} />}
-                >
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>{t("step.step4.creditCard")}</span>
-                        <img src="/assets/visa.png" alt="Visa" style={{ marginRight: 4 }} />
-                        <img src="/assets/mastercard.png" alt="MasterCard" style={{ marginRight: 4 }} />
-                        <img src="/assets/amex.png" alt="Amex" />
+                <Button variant="outlined" fullWidth onClick={handlePayVisa}>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <CreditCardIcon style={{ marginRight: 8 }} />
+                            <span style={{ marginRight: 12 }}>{t("step.step4.creditCard")}</span>
+                            <img src="/assets/visa.png" alt="Visa" style={{ marginRight: 4, height: 24 }} />
+                            <img src="/assets/mastercard.png" alt="MasterCard" style={{ marginRight: 4, height: 24 }} />
+                            <img src="/assets/amex.png" alt="Amex" style={{ height: 24 }} />
+                        </div>
+                        <ArrowForwardIosIcon />
                     </div>
                 </Button>
-
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={handlePayMomo}
-                    startIcon={<AccountBalanceWalletIcon />}
-                    endIcon={<ArrowForwardIosIcon sx={{ ml: "247px" }} />}
-                    >
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: 12 }}>{t("step.step4.eWallet")}</span>
-                        <img src="/assets/momo.png" alt="MoMo" />
+                <Button variant="outlined" fullWidth onClick={handlePayMomo}>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <CreditCardIcon style={{ marginRight: 8 }} />
+                            <span style={{ marginRight: 12 }}>{t("step.step4.eWallet")}</span>
+                            <img src="/assets/momo.png" alt="MoMo" style={{ marginRight: 4, height: 24 }} />  
+                        </div>
+                        <ArrowForwardIosIcon />
                     </div>
                 </Button>
             </div>

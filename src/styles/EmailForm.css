@@ -44,8 +44,7 @@
     color: #fff;
 }
 
-  /* Responsive: row layout on larger screens */
-@media (min-width: 640px) {
+@media (max-width: 1024px) {
     .email-form {
       flex-direction: row;
     }
@@ -62,4 +61,12 @@
       border-radius: 9999px;
     }
 }
-  
+
+@media (max-width: 768px) {
+    .email-button {
+        margin-top: 0;
+        margin-left: 0.5rem;
+        border-radius: 9999px;
+    }
+
+}

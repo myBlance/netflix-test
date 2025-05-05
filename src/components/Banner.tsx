@@ -88,7 +88,9 @@ const Banner: React.FC = () => {
                         <div className="banner-content">
                             <h1>{movies[currentSlide]?.title || movies[currentSlide]?.name}</h1>
                             <p>{movies[currentSlide]?.overview}</p>
-                            <EmailForm setPlaying={setPlaying} />
+                            <div className="email-form">
+                                <EmailForm setPlaying={setPlaying} />
+                            </div>
                         </div>
                     </motion.div>
                 </AnimatePresence>

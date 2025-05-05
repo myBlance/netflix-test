@@ -69,5 +69,15 @@
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
+@media (max-width: 1024px) {
+    .movie-slide {
+        width: calc(100% / 4); /* Tablet: 4 phim */
+    }
+}
 
+@media (max-width: 768px) {
+    .movie-slide {
+        width: calc(100% / 2); /* Mobile: 2 phim */
+    }
 
+}

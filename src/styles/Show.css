@@ -125,3 +125,54 @@
     background-color: #f40612;
     
 }
+
+
+@media (max-width: 1024px) {
+    .show-overlay {
+        padding: 80px;
+    }
+    
+    .show-poster img {
+        width: 250px;
+        margin-top: 50px;
+    }
+    
+}
+
+@media (max-width: 768px) {    
+    .show-overlay {
+        padding: 40px;
+    }
+
+    .show-poster img {
+        width: 150px;
+        margin-top: 100px;
+    }
+
+    .show-title {
+        font-size: 1.5rem;
+    }
+
+    .show-details h2 {
+        font-size: 14px;
+    }
+    
+    .show-meta {
+        font-size: 12px;
+    }
+ 
+    .score-circle {
+        width: 30px;
+        height: 30px;
+    }
+      
+    .show-overview {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .play-trailer-button {
+        font-size: 12px;
+    }
+    
+}

@@ -20,6 +20,20 @@ const CastList: React.FC<Props> = ({ movieId }) => {
     const [cast, setCast] = useState<CastMember[]>([]);
     const navigate = useNavigate();
     const { t } = useTranslation();
+    const [visibleCount, setVisibleCount] = useState(8);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 600) setVisibleCount(2);      // Mobile
+            else if (width < 1024) setVisibleCount(4); // Tablet
+            else setVisibleCount(8);                  // Desktop
+        };
+
+        handleResize(); // Gọi khi load lần đầu
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const fetchCast = async () => {
@@ -27,14 +41,15 @@ const CastList: React.FC<Props> = ({ movieId }) => {
                 const response = await axios.get(
                     `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=vi`
                 );
-                setCast(response.data.cast.slice(0, 8 )); 
+                setCast(response.data.cast.slice(0, visibleCount));
             } catch (error) {
                 console.error('Error fetching cast:', error);
             }
         };
 
         fetchCast();
-    }, [movieId]);
+    }, [movieId, visibleCount]);
+
 
     return (
         <div className="cast-section">

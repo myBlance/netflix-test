@@ -126,11 +126,21 @@
     padding: 10px;
     margin-bottom: 50px;
     transform: translateY(0);
-    text-align: center;
+    
   }
 
   .banner-content h1 {
-    font-size: 20px;
+    font-size: 48px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .banner-content p {
+    display: none;
+  }
+
+  .banner-content .email-form {
+    display: none;
   }
 
   .play-button {
@@ -140,9 +150,10 @@
 
   .banner-controls {
     top: auto;
-    bottom: 10px;
-    justify-content: space-around;
+    bottom: 150px;
+    justify-content: space-between;
     transform: none;
+    width: 100%;
   }
 
   .prev-button,

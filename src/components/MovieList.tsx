@@ -38,19 +38,40 @@ const MovieList: React.FC = () => {
         fetchMovies();
     }, [i18n.language]);
 
+
+
+    const getSlidesPerView = () => {
+        const width = window.innerWidth;
+        if (width <= 768) return 2;
+        if (width <= 1024) return 4;
+        return 7;
+    };
+    
+    const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
+
+    useEffect(() => {
+        const handleResize = () => {
+            setSlidesPerView(getSlidesPerView());
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const handleNext = () => {
         setStartIndex((prev) => {
-            const nextIndex = prev + 3;
-            return nextIndex >= movies.length ? 0 : nextIndex; // Loop back to the start
+            const nextIndex = prev + slidesPerView;
+            return nextIndex >= movies.length ? 0 : nextIndex;
         });
     };
-
+    
     const handlePrev = () => {
         setStartIndex((prev) => {
-            const prevIndex = prev - 3;
-            return prevIndex < 0 ? movies.length - (movies.length % 7 || 7) : prevIndex; // Loop to the end
+            const prevIndex = prev - slidesPerView;
+            const maxStart = movies.length - slidesPerView;
+            return prevIndex < 0 ? Math.max(0, maxStart) : prevIndex;
         });
     };
+    
 
     return (
         <div className="movie-list">
@@ -64,9 +85,11 @@ const MovieList: React.FC = () => {
                     <div
                         className="movie-slider"
                         style={{
-                            transform: `translateX(-${startIndex * (100 / 7)}%)`,
+                            
+                            transform: `translateX(-${startIndex * (100 / slidesPerView)}%)`,
                             transition: "transform 0.5s ease-in-out",
-                            width: `${(movies.length * 43) / 7}%`, // để đủ độ dài trượt
+                            width: `${(movies.length * 43) / slidesPerView}%`,
+                            
                         }}
                     >
                         {movies.map((movie) => (

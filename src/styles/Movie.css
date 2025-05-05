@@ -76,3 +76,18 @@
 .watch-button:hover {
     background-color: #f40612;
 }
+
+@media (max-width: 768px) {
+    .modal-box {
+        width: 300px;
+    }
+    
+    .modal-image {
+        max-height: 200px;
+    }
+    
+    .modal-title {
+        font-size: 28px;
+    }
+    
+}

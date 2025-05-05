@@ -51,5 +51,45 @@
     border: 1px solid #333;
     padding: 5px;
 }
+
+/* Mobile: 1 cột */
+@media (max-width: 768px) {
+    .footer {
+      margin-left: 5%;
+      padding: 20px;
+      font-size: 14px;
+    }
   
+    .footer-links {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-links ul {
+      width: 100%;
+    }
+  
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .footer-bottom {
+      align-items: flex-start;
+    }
+  }
+  
+  /* Tablet: 2 cột */
+  @media (max-width: 1024px) {
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+  
+    .footer-links ul {
+      width: 45%; /* mỗi cột chiếm 45% */
+    }
+  }
   

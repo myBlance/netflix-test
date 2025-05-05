@@ -113,7 +113,6 @@
 
 
 
-
 /* Step 2 */
 
 .step2-container {
@@ -315,4 +314,31 @@
 
 .step4-button Button img {
     width: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+    .step1-container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .step1-container .next-button {
+        margin-left: 20px ;
+    }
+
+    .end-to-end {
+        margin-left: 42%;
+    }
+    
+    .step4-button Button {
+        width: 250px;
+        justify-content: flex-start;
+        margin-bottom: 10px;   
+    }
+    
+    .step4-button Button img {
+        display: none;
+    }
 }
