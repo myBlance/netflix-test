@@ -44,7 +44,7 @@
 .show-meta {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #ccc;
+    color: var(--text-color);
 }
 
 .show-user-score {
@@ -92,7 +92,7 @@
 .show-tagline {
     font-style: italic;
     margin-bottom: 20px;
-    color: #ccc;
+    color: var(--text-color);
 }
 
 .show-overview {

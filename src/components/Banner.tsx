@@ -10,6 +10,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from "./ThemeContext";
 
 const Banner: React.FC = () => {
     const [movies, setMovies] = useState<any[]>([]);
@@ -17,6 +18,7 @@ const Banner: React.FC = () => {
     const [progress, setProgress] = useState([0, 0, 0]);
     const [playing, setPlaying] = useState(true);
     const { i18n } = useTranslation();
+    const theme = useTheme();
 
     useEffect(() => {
         async function fetchMovies() {
@@ -69,6 +71,10 @@ const Banner: React.FC = () => {
         }
     }, [progress, currentSlide, playing]);
 
+    const backgroundImage = theme.palette.mode === "dark"
+        ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) `
+        : `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7))`;
+
     return (
         <header className="banner">
 
@@ -103,7 +109,9 @@ const Banner: React.FC = () => {
                     <ArrowForwardIosIcon />
                 </button>
             </div>
-            <div className="banner-curve"></div>
+            <div className="banner-curve" 
+                style={{ backgroundImage }}>
+            </div>
 
             <div className="slide-indicators">
                 <button onClick={togglePlay}>

@@ -28,7 +28,6 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
                 {t("step.step1.content")}
             </div>
 
-
             <div className="email-info">
                 <p>Email</p>
                 <strong>{email}</strong>
@@ -44,25 +43,27 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
                 sx={{ mb: 0 , mt: 2}}
                 className="password-field"
             />
-            
-            <div className="forgot-password">
-                {t("forgot-password")}
+            <div className='forget-password-container'>
+                <div className="forgot-password">
+                    {t("forgot-password")}
+                </div>
+                <div className="next-button-container">
+                    <Button
+                        variant="contained"
+                        sx={{ 
+                            backgroundColor: 'red', 
+                            color: '#fff',  
+                            width:'150px',
+                            height:'50px',
+                        }}
+                        onClick={onNext}
+                        disabled={!password}
+                        className="next-button"
+                    >
+                        {t("register.next")}
+                    </Button>
+                </div>
             </div>
-
-            <Button
-                variant="contained"
-                sx={{ 
-                    backgroundColor: 'red', 
-                    color: '#fff',  
-                    width:'150px',
-                    height:'50px', 
-                }}
-                onClick={onNext}
-                disabled={!password}
-                className="next-button"
-            >
-                {t("register.next")}
-            </Button>
         </div>
     );
 };

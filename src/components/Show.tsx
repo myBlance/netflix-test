@@ -4,6 +4,7 @@ import { API_KEY, BASE_URL } from "../services/tmdb";
 import "../styles/Show.css";
 import ViewTrailer from "./ViewTrailer"; 
 import { useTranslation } from 'react-i18next';
+import { useTheme } from "./ThemeContext";
 
 interface ShowProps {
     id: number;
@@ -14,6 +15,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
     const [show, setShow] = useState<any>(null);
     const [showTrailer, setShowTrailer] = useState(false);
     const { t, i18n } = useTranslation();
+    const theme = useTheme();
 
 
     useEffect(() => {
@@ -42,13 +44,16 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
         return <div className="show-loading">Loading...</div>;
     }
 
+    const backgroundImage = theme.palette.mode === "dark"
+        ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original/${show.backdrop_path})`
+        : `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://image.tmdb.org/t/p/original/${show.backdrop_path})`;
+
+
     return (
         <div className="show-container">
             <div
                 className="show-banner"
-                style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original/${show.backdrop_path})`,
-                }}
+                style={{ backgroundImage }}
             >
                 <div className="show-overlay">
                     <div className="show-poster">

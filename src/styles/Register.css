@@ -106,11 +106,14 @@
     font-size: 16px;
 }
 
-.step1-container .next-button {
-    margin-left: 140px ;
+.MuiButton-root.next-button {
+    margin: 0 !important;
 }
 
 
+.forget-password-container {
+    justify-items: center;
+}
 
 
 /* Step 2 */
