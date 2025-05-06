@@ -50,7 +50,6 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, email }) => {
             </div>
 
             <Button
-                
                 variant="contained"
                 sx={{ 
                     backgroundColor: 'red', 

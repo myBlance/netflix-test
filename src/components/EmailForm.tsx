@@ -42,6 +42,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                     <TextField
                         id="filled-multiline-flexible"
                         label={t("email address")}
+                        className='textfield'
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
                         onFocus={() => setPlaying(false)}
@@ -64,7 +65,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                                 '&:hover:before': {
                                     borderBottom: 'none',
                                 },
-                                '&:after': {
+                                '&:hover:after': {
                                     borderBottom: 'none',
                                 },
                                 '&.Mui-focused:after': {
