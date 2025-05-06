@@ -42,7 +42,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                     <TextField
                         id="filled-multiline-flexible"
                         label={t("email address")}
-                        className='textfield'
+                        className="textfield"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
                         onFocus={() => setPlaying(false)}
@@ -52,33 +52,40 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                         sx={{
                             width: '65%',
                             '& .MuiFilledInput-root': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                backgroundColor: 'rgba(0, 0, 0, 0.9)',
                                 borderRadius: '40px',
                                 color: '#fff',
                                 border: '2px solid #fff',
+                                boxShadow: 'none',
+                                paddingLeft: '24px',
+                                transition: 'background-color 0s', // không đổi màu khi hover
+                                '&:hover': {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.9)', // giữ nguyên màu khi hover
+                                },'&.Mui-focused': {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.9)', // giữ nguyên khi focus
+                                },
+                                '&:before': {
+                                    borderBottom: 'none !important',
+                                },
+                                '&:after': {
+                                    borderBottom: 'none !important',
+                                },
+                                '&:hover:before': {
+                                    borderBottom: 'none !important',
+                                },
                                 '& input': {
                                     caretColor: '#fff',
                                 },
-                                '&:before, &:after': {
-                                    borderBottom: 'none',
-                                },
-                                '&:hover:before': {
-                                    borderBottom: 'none',
-                                },
-                                '&:hover:after': {
-                                    borderBottom: 'none',
-                                },
-                                '&.Mui-focused:after': {
-                                    borderBottom: 'none', 
-                                },
                                 '& input:-webkit-autofill': {
-                                    WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0.8) inset',
-                                    WebkitTextFillColor: '#fff',
-                                    borderRadius: '40px',
+                                    WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0.9) inset !important',
+                                    WebkitTextFillColor: '#fff !important',
+                                    transition: 'background-color 0s 600000s, color 0s 600000s',
+                                    borderRadius:'40px',
                                 },
-                            },
-                            '& .MuiInputLabel-root': {
+                                },
+                                '& .MuiInputLabel-root': {
                                 color: '#fff',
+                                left: '24px',
                                 '&.Mui-focused': {
                                     color: '#fff',
                                 },

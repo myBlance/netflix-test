@@ -20,10 +20,11 @@ const Language: React.FC = () => {
                 displayEmpty
                 inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
                 sx={{  
+                    marginTop:'10px',
                     backgroundColor: '#333',
                     borderRadius: '50px',
                     color: '#fff',
-                    padding: '10px 20px',                    
+                    padding: '5px 10px',                    
                     '& .MuiSelect-icon': {
                         color: '#fff',
                     },
