@@ -20,19 +20,25 @@ const Language: React.FC = () => {
                 onChange={handleChange}
                 displayEmpty
                 inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
-                sx={{backgroundColor: '#333',
+                sx={{
+                    backgroundColor: '#333',
                     borderRadius: '50px',
-                    border: '2px solid #fff',
                     color: '#fff',
+                    padding: '10px 20px',
                     '& .MuiSelect-icon': {
                         color: '#fff',
                     },
-                    '& .MuiSelect-select': {
-                        margin: '5px',
+                    '& .MuiOutlinedInput-notchedOutline': {
+                        border: '2px solid #fff',
                         borderRadius: '50px',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        border: '2px solid #fff',
+                    },
+                    '& .MuiSelect-select': {
                         padding: '10px 20px',
+                        borderRadius: '50px',
                         backgroundColor: '#333',
-                        color: '#fff',
                     },
                 }}
             >

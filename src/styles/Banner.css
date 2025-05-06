@@ -93,6 +93,11 @@
     transform: translateY(-50%);
 }
 
+.email-form .email-form-title {
+  text-align: left;
+  padding: 0;
+}
+
 .prev-button,
 .next-button {
     height: 100px;

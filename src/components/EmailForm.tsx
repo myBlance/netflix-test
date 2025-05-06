@@ -44,36 +44,37 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                         label={t("email address")}
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
-                        onFocus={() => setPlaying(false)} // Khi focus vào input -> dừng slider
-                        onBlur={() => setPlaying(true)} 
+                        onFocus={() => setPlaying(false)}
+                        onBlur={() => setPlaying(true)}
                         maxRows={4}
                         variant="filled"
-                        
                         sx={{
                             width: '65%',
                             '& .MuiFilledInput-root': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
                                 borderRadius: '40px',
                                 color: '#fff',
                                 border: '2px solid #fff',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(0, 0, 0, 0.8)', 
+                                '&:before, &:after': {
+                                    borderBottom: 'none',
                                 },
-                                '&.Mui-focused': {
-                                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                                    borderColor: '#666',
-                                    border: '2px solid #fff',
+                                '&:hover:before': {
+                                    borderBottom: 'none',
+                                },
+                                '&.Mui-focused:after': {
+                                    borderBottom: 'none', 
+                                },
+                                '& input:-webkit-autofill': {
+                                    WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0.8) inset',
+                                    WebkitTextFillColor: '#fff',
+                                    borderRadius: '40px',
                                 },
                             },
                             '& .MuiInputLabel-root': {
-                                color: '#fff', 
+                                color: '#fff',
                                 '&.Mui-focused': {
                                     color: '#fff',
                                 },
-                            },
-                            '& .MuiInputBase-root': {
-                                color: '#fff', 
-                                
                             },
                         }}
                     />

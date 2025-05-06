@@ -128,7 +128,7 @@ const Banner: React.FC = () => {
                                 '& .MuiLinearProgress-bar': { backgroundColor: '#fff' },
                             }}
                         />
-                  </div>
+                    </div>
                 ))}
             </div>
         </header>
