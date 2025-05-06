@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { useTranslation } from 'react-i18next';
+import { useTheme } from './ThemeContext';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 
 const Navbar: React.FC = () => {
     const { t } = useTranslation();
     const [menuActive, setMenuActive] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     const toggleMenu = () => {
         setMenuActive(!menuActive);
@@ -30,6 +34,9 @@ const Navbar: React.FC = () => {
                 <Link to="/login" className="nav-link">
                     {t("login")}
                 </Link>
+                <button className="theme-toggle" onClick={toggleTheme}>
+                    {theme === 'dark' ? <BrightnessHighIcon /> : <Brightness4Icon />}
+                </button>
             </div>
 
             {/* Navbar Links */}
@@ -39,7 +46,7 @@ const Navbar: React.FC = () => {
                 </Link>
                 <Link to="/login" className="nav-link">
                     {t("login")}
-                </Link>
+                </Link> 
             </div>
         </nav>
     );

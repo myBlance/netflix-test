@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import TranslateIcon from '@mui/icons-material/Translate';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import i18n from '../I18N/i18n';
@@ -20,11 +20,11 @@ const Language: React.FC = () => {
                 onChange={handleChange}
                 displayEmpty
                 inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
-                sx={{
+                sx={{  
                     backgroundColor: '#333',
                     borderRadius: '50px',
                     color: '#fff',
-                    padding: '10px 20px',
+                    padding: '10px 20px',                    
                     '& .MuiSelect-icon': {
                         color: '#fff',
                     },

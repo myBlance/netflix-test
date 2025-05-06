@@ -2,8 +2,8 @@
     width: 80%;
     margin-left: 10%;
     margin-bottom: 100px;
-    background-color: #141414;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .asked-questions-title {
@@ -24,7 +24,7 @@
 .accordion-summary {
     padding: 10px;
     background-color: #2a2a2a;
-    color: #fff;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .accordion-icon {
-    color: #fff;
+    color: var(--text-color);
     margin-right: 10px;
     vertical-align: middle;
 }
@@ -43,7 +43,7 @@
     padding: 10px;
     margin-left: 10px;
     background-color: #2a2a2a;
-    color: #fff;
+    color: var(--text-color);
     line-height: 1.5;
 }
 

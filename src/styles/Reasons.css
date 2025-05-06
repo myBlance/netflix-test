@@ -1,6 +1,6 @@
 .reasons {
-    background-color: #141414;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     text-align: left;
 }
 
@@ -19,11 +19,12 @@
 
 .reason-item {
     position: relative; 
-    background: rgba(255, 255, 255, 0.1);
+    background: #4c4c4c;
     border-radius: 10px;
     padding: 20px;
     width: 250px;
     text-align: center;
+    
 }
 
 .reason-icon {
@@ -32,10 +33,6 @@
     right: 20px; 
     font-size: 24px;
     color: rgba(255, 156, 156, 0.7); 
-}
-
-.reason-title {
-    margin-bottom: 10px;
 }
 
 .reason-description {
