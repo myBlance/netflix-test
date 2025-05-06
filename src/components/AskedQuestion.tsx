@@ -18,10 +18,8 @@ const Accordion = styled((props: AccordionProps) => (
   	<MuiAccordion disableGutters elevation={0} square {...props} />
 ))(() => ({
 	border: `1px solid`,
-	backgroundColor: '#2a2a2a',
-	'&:not(:last-child)': {
-		borderBottom: 0,
-	},
+	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
+	
 	'&::before': {
 		display: 'none',
   	},
@@ -34,8 +32,8 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   	/>
 ))(() => ({
 	padding: '8px',
-	backgroundColor: '#2a2a2a',
-	color: '#ffffff',
+	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
+	color: 'var(--text-color)',
 	flexDirection: 'row',
 	[`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]: {
 		transform: 'rotate(45deg)',
@@ -46,9 +44,9 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(() => ({
-    color: '#ffffff',
+    color: 'var(--text-color)',
     padding: '16px',
-	backgroundColor: '#2a2a2a',
+	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
 }));
 
 const AskedQuestions: React.FC = () => {

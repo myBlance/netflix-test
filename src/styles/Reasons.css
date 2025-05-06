@@ -19,7 +19,7 @@
 
 .reason-item {
     position: relative; 
-    background: #4c4c4c;
+    background: linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color);
     border-radius: 10px;
     padding: 20px;
     width: 250px;
@@ -36,5 +36,5 @@
 }
 
 .reason-description {
-    color: #ccc;
+    color: var(--text-color);
 }
