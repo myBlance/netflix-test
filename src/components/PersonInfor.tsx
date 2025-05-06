@@ -50,6 +50,7 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                         style={{ borderRadius: "10px", width: "100%" }}
                     />
                     <div className="person-infor-content"> 
+                        <h2 className="person-title1">{person.name}</h2>
                         <p><strong>{t('person.knownFor')}</strong><br />{viDepartment(person.known_for_department)}</p>
                         <p><strong>{t('person.totalWorks')}</strong><br />{person.combined_credits?.cast?.length || 0}</p>
                         <p><strong>{t('person.gender')}</strong><br />{person.gender === 1 ? t('person.female') : t('person.male')}</p>
@@ -62,7 +63,7 @@ const PersonInfo: React.FC<Props> = ({ person }) => {
                     {person.combined_credits?.cast?.length > 0 && (
                         <div className="person-acting-container">
                             <div className="person-biography">
-                                <h2 className="person-title">{person.name}</h2>
+                                <h2 className="person-title2">{person.name}</h2>
                                 {person.biography ? (
                                     <p className="biography-text">
                                         <strong>{t('person.biography')}</strong><br />

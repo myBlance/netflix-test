@@ -9,7 +9,7 @@
     text-align: left;
     font-weight: bold;
     margin-bottom: 5%;
-    color: #fff;
+    color: var(--text-color);
 }
   
 .cast-list {
@@ -21,7 +21,7 @@
 }
   
 .cast-card {
-    background: #000000;
+    background: var(--bg-color);
     color: #9b3e3e;
     width: 130px;
     height: 350px;
@@ -63,15 +63,14 @@
 .cast-viewmore {
     display: flex;
     align-items: center;
-    padding-left: 10px;
 }
   
 .view-more {
     font-weight: bold;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #9b3e3e;
 }
   
 .view-more:hover {
-    color: #9b3e3e;
+    color: #da4d4d;
 }

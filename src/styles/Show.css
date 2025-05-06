@@ -1,6 +1,6 @@
 .show-container {
-    color: #fff;
-    background-color: #141414;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }

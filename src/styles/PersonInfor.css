@@ -4,8 +4,8 @@
     width: 80%;
     margin: auto;
     border-radius: 20px;
-    background-color: #2a2a2a;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .person-info-main {
@@ -33,12 +33,21 @@
     flex: 1;
 }
 
-.person-title {
+.person-title2 {
     font-size: 30px;
     font-weight: bold;
     text-align: left;
     color: #d85959;
 }
+
+.person-title1 {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #d85959;
+}
+
 
 
 strong {
@@ -51,7 +60,7 @@ strong {
     margin-top: -20px;
     font-size: 16px;
     line-height: 1.8;
-    color: #ffffff;
+    color: var(--text-color);
     text-align: justify;
     padding: 15px;
     border-radius: 8px;
@@ -93,7 +102,7 @@ strong {
 .acting-year h4 {
     margin: 0;
     font-size: 18px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* Danh sách phim bên phải */
@@ -118,7 +127,7 @@ strong {
 .acting-title a {
     font-weight: 500;
     font-size: 20px;
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -135,6 +144,14 @@ strong {
 }
 
 @media (max-width: 768px) {
+    .person-title1 {
+        display: flex;
+    }
+
+    .person-title2 {
+        display: none;
+    }
+
     .person-info-main {
       flex-direction: column;
       align-items: center;
