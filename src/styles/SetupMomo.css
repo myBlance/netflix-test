@@ -42,6 +42,7 @@
     font-size: 28px;
     font-weight: bold;
     margin: 12px 0;
+    color: #000;
 }
   
 .momo-logo {
@@ -51,6 +52,7 @@
 .instruction {
     font-size: 16px;
     margin-bottom: 4px;
+    color: #000;
 }
 
 .sub-instruction {
