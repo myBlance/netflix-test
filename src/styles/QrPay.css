@@ -1,5 +1,6 @@
 .qrpay {
-    background-color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     height: 100vh;
     justify-items: center;
     padding: 40px;
@@ -11,6 +12,12 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.qrpay-container .logo-link .logo{
+    width: 150px;
+    height: 100px;
+    margin: 0;
 }
 
 .qrpay-title h1 {

@@ -55,10 +55,16 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                                 borderRadius: '40px',
                                 color: '#fff',
                                 border: '2px solid #fff',
+                                '& input': {
+                                    caretColor: '#fff',
+                                },
                                 '&:before, &:after': {
                                     borderBottom: 'none',
                                 },
                                 '&:hover:before': {
+                                    borderBottom: 'none',
+                                },
+                                '&:after': {
                                     borderBottom: 'none',
                                 },
                                 '&.Mui-focused:after': {
