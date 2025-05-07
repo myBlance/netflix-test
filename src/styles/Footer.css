@@ -78,10 +78,10 @@
     .footer-bottom {
       align-items: flex-start;
     }
-  }
+}
   
   /* Tablet: 2 cột */
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
     .footer-links {
       flex-wrap: wrap;
       gap: 30px;
@@ -89,7 +89,7 @@
     }
   
     .footer-links ul {
-      width: 45%; /* mỗi cột chiếm 45% */
+      width: 45%; 
     }
-  }
+}
   

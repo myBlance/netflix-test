@@ -170,7 +170,8 @@ const Login = () => {
                                 </div>
 
                                 <p className="signup-text">{t("signup-text")}
-                                    <a href="#">{t("Sign up now")}.</a>
+                                
+                                    <a href="/">{t("Sign up now")}.</a>
                                 </p>
                                 <div className="captcha-note">
                                     <p>{t("captcha-note")}</p>

@@ -23,7 +23,6 @@
 
 .accordion-summary span {
     font-size: 18px;
-    font-weight: 550;
     margin-left: 10px;
 }
 
@@ -37,12 +36,11 @@
     padding: 10px;
     margin-left: 10px;
     color: var(--text-color);
-    line-height: 1.5;
 }
 
 .accordion-details p {
+    line-height: 1.7;
     font-size: 18px;
-    font-weight: 550;
     text-align: left;
 }
 

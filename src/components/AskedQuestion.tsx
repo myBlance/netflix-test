@@ -19,7 +19,6 @@ const Accordion = styled((props: AccordionProps) => (
 ))(() => ({
 	border: 'none',
 	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
-	
 	'&::before': {
 		display: 'none',
   	},
@@ -80,9 +79,9 @@ const AskedQuestions: React.FC = () => {
     },
     ];
     
-  const [expanded, setExpanded] = React.useState<string | false>(false);
+    const [expanded, setExpanded] = React.useState<string | false>(false);
 
-  const handleChange =
+    const handleChange =
         (panel: string) => (_event: React.SyntheticEvent, newExpanded: boolean) => {
             setExpanded(newExpanded ? panel : false);
         };

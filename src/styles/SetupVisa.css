@@ -96,6 +96,11 @@
     font-weight: 700;
 }
 
+.change-btn:hover {
+    color: #e50914;
+
+}
+
 .terms-agreement {
     color: #aaa;
     font-size: 12px;

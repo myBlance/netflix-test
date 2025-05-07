@@ -7,7 +7,6 @@ import '../styles/Editplan.css';
 import { useTranslation } from 'react-i18next';
 
 
-
 const EditplanPage: React.FC = () => {
     const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: number } | null>(null);
     const navigate = useNavigate();

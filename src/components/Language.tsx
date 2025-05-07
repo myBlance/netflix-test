@@ -20,7 +20,7 @@ const Language: React.FC = () => {
                 displayEmpty
                 inputProps={{ 'aria-label': 'Chọn ngôn ngữ' }}
                 sx={{  
-                    marginTop:'15px',
+                    marginTop:'17px',
                     backgroundColor: 'var(--bg-color)',
                     borderRadius: '50px',
                     color: 'var(--text-color)',
@@ -33,10 +33,10 @@ const Language: React.FC = () => {
                         borderRadius: '50px',
                     },
                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                        border: '2px solid #333',
+                        border: '2px solid var(--text-color)',
                     },
                     '& .MuiSelect-select': {
-                        padding: '8px 20px',
+                        padding: '4px 20px',
                         borderRadius: '50px',
                         backgroundColor: 'var(--bg-color)',
                     },

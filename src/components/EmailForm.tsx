@@ -55,10 +55,10 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                 borderRadius: '40px',
                                 color: '#fff',
-                                border: '2px solid #fff',
+                                border: '2px solid var(--text-color)',
                                 boxShadow: 'none',
                                 paddingLeft: '24px',
-                                transition: 'background-color 0s', // không đổi màu khi hover
+                                transition: 'background-color 0s',           // không đổi màu khi hover
                                 '&:hover': {
                                     backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên màu khi hover
                                 },'&.Mui-focused': {

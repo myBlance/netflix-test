@@ -133,7 +133,7 @@ const Banner: React.FC = () => {
                             className="slide-progress-bar"
                             sx={{
                                 backgroundColor: 'rgba(236, 236, 236, 0.3)',
-                                '& .MuiLinearProgress-bar': { backgroundColor: '#fff' },
+                                '& .MuiLinearProgress-bar': { backgroundColor: 'var(--text-color)' },
                             }}
                         />
                     </div>

@@ -45,8 +45,8 @@
 }
 
 .editplan Button {
-    background-color: red ;
-    color: white;
+    background-color: #ff0000 ;
+    color: #fff;
     padding: 10px 30px;
     font-weight: bold;
     font-size: 16px;
@@ -140,6 +140,7 @@
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
+
 .step3-card.premium.selected::before {
     background: #ff0000;
     

@@ -44,12 +44,14 @@ const StepFour: React.FC<StepFourProps> = ({ label, description }) => {
 
             <div className="step4-button">
                 <Button variant="outlined" fullWidth onClick={handlePayVisa}>
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '100%',
-                    }}>
+                    <div 
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            width: '100%',
+                        }}
+                    >
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <CreditCardIcon style={{ marginRight: 8 }} />
                             <span style={{ marginRight: 12 }}>{t("step.step4.creditCard")}</span>
