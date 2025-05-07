@@ -37,41 +37,54 @@ const Login = () => {
                                 <TextField
                                     id="filled-multiline-flexible"
                                     label={t("email")}
-                                
                                     maxRows={4}
                                     variant="filled"
                                     sx={{
                                         width: '100%',
-                                        
                                         '& .MuiFilledInput-root': {
-                                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                             borderRadius: '4px',
                                             color: '#fff',
                                             border: '2px solid #fff',
+                                            boxShadow: 'none',
+                                            paddingLeft: '5px',
+                                            transition: 'background-color 0s', // không đổi màu khi hover
                                             '&:hover': {
-                                                backgroundColor: 'rgba(0, 0, 0, 0.8)', 
+                                                backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên màu khi hover
+                                            },'&.Mui-focused': {
+                                                backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên khi focus
                                             },
-                                            '&.Mui-focused': {
-                                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                                                borderColor: '#666',
-                                                border: '2px solid #fff',
+                                            '&:before': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '&:after': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '&:hover:before': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '& input': {
+                                                caretColor: '#fff',
+                                            },
+                                            '& input:-webkit-autofill': {
+                                                WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0) inset !important',
+                                                WebkitTextFillColor: '#fff !important',
+                                                transition: 'background-color 0s 600000s, color 0s 600000s',
+                                                borderRadius:'40px',
                                             },
                                         },
                                         '& .MuiInputLabel-root': {
-                                            color: '#fff', 
+                                            color: '#fff',
+                                            left: '5px',
                                             '&.Mui-focused': {
                                                 color: '#fff',
                                             },
-                                        },
-                                        '& .MuiInputBase-root': {
-                                            color: '#fff', 
                                         },
                                     }}
                                 />
                                 <TextField
                                     id="filled-multiline-flexible"
                                     label={t("password")}
-                                    
                                     maxRows={4}
                                     variant="filled"
                                     type={showPassword ? 'text' : 'password'}
@@ -80,27 +93,43 @@ const Login = () => {
                                         mt: 3,
                                         width: '100%',
                                         '& .MuiFilledInput-root': {
-                                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                             borderRadius: '4px',
                                             color: '#fff',
                                             border: '2px solid #fff',
+                                            boxShadow: 'none',
+                                            paddingLeft: '5px',
+                                            transition: 'background-color 0s', // không đổi màu khi hover
                                             '&:hover': {
-                                                backgroundColor: 'rgba(0, 0, 0, 0.8)', 
+                                                backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên màu khi hover
+                                            },'&.Mui-focused': {
+                                                backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên khi focus
                                             },
-                                            '&.Mui-focused': {
-                                                backgroundColor: 'rgba(0, 0, 0, 0.8)', 
-                                                borderColor: '#666',
-                                                border: '2px solid #fff',
+                                            '&:before': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '&:after': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '&:hover:before': {
+                                                borderBottom: 'none !important',
+                                            },
+                                            '& input': {
+                                                caretColor: '#fff',
+                                            },
+                                            '& input:-webkit-autofill': {
+                                                WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0) inset !important',
+                                                WebkitTextFillColor: '#fff !important',
+                                                transition: 'background-color 0s 600000s, color 0s 600000s',
+                                                borderRadius:'40px',
                                             },
                                         },
                                         '& .MuiInputLabel-root': {
-                                            color: '#fff', 
+                                            color: '#fff',
+                                            left: '5px',
                                             '&.Mui-focused': {
                                                 color: '#fff',
                                             },
-                                        },
-                                        '& .MuiInputBase-root': {
-                                            color: '#fff', 
                                         },
                                     }}
                                     InputProps={{
@@ -109,8 +138,8 @@ const Login = () => {
                                                 <IconButton
                                                     onClick={handleTogglePassword}
                                                     edge="end"
-                                                    sx={{ color: '#fff',
-                                                        
+                                                    sx={{ 
+                                                        color: '#fff', 
                                                     }}
                                                 >
                                                     {showPassword ? <VisibilityOff /> : <Visibility />}

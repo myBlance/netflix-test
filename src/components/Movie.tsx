@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Box, IconButton, Button } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Modal, Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; 
 import '../styles/Movie.css'; 
 import { useTranslation } from 'react-i18next'
@@ -51,9 +50,7 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
                             className="modal-image"
                         />
                         <h2 className="modal-title">{movie.title}</h2>
-                        <IconButton className="close-button" onClick={toggleModal(false)}>
-                            <CloseIcon />
-                        </IconButton>
+                        
                     </Box>
 
                     <Box className="modal-content">
@@ -73,8 +70,8 @@ const Movie: React.FC<MovieProps> = ({ movie }) => {
                         >
                             ▶ {t("whatchnow")}
                         </Button>
-                    </Box>
-                </Box>
+                    </Box>                
+                </Box>   
             </Modal>
         </>
     );

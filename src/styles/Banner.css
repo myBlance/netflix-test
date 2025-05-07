@@ -95,6 +95,8 @@
 
 .email-form .email-form-title {
   text-align: left;
+  color: #fff;
+  font-weight: normal;
   padding: 0;
   font-size: 18px;
 }
