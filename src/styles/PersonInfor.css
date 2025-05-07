@@ -44,7 +44,7 @@
     display: none;
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
+    justify-content: center;
     color: #d85959;
 }
 
