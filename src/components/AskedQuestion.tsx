@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 const Accordion = styled((props: AccordionProps) => (
   	<MuiAccordion disableGutters elevation={0} square {...props} />
 ))(() => ({
-	border: `1px solid`,
+	border: 'none',
 	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
 	
 	'&::before': {
@@ -32,6 +32,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   	/>
 ))(() => ({
 	padding: '8px',
+    border: 'none',
 	background: 'linear-gradient(rgba(130, 130, 130, 0.5), rgba(130, 130, 130, 0.5)), var(--bg-color)',
 	color: 'var(--text-color)',
 	flexDirection: 'row',

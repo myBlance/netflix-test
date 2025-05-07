@@ -21,15 +21,9 @@
     margin-bottom: 10px;
 }
 
-.accordion-summary {
-    padding: 10px;
-    background-color: #2a2a2a;
-    color: var(--text-color);
-    cursor: pointer;
-}
-
 .accordion-summary span {
     font-size: 18px;
+    font-weight: 550;
     margin-left: 10px;
 }
 
@@ -42,13 +36,13 @@
 .accordion-details {
     padding: 10px;
     margin-left: 10px;
-    background-color: #2a2a2a;
     color: var(--text-color);
     line-height: 1.5;
 }
 
 .accordion-details p {
     font-size: 18px;
+    font-weight: 550;
     text-align: left;
 }
 

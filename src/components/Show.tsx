@@ -93,7 +93,7 @@ const Show: React.FC<ShowProps> = ({ id, type }) => {
                                 </svg>
                             </div>
                             <div>
-                                <div><strong>{t("score")}</strong></div>
+                                <div className="score"><strong>{t("score")}</strong></div>
                             </div>
                         </div>
                         <p className="show-tagline">{show.tagline}</p>

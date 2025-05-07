@@ -7,7 +7,7 @@
 
 .show-banner {
     position:relative;
-    height: 80vh;
+    height: 85vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -35,8 +35,8 @@
 }
 
 .show-title {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 48px;
+    font-weight:bolder;
     margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -83,10 +83,15 @@
 }
   
 .percentage {
-    fill: #fff;
+    fill: var(--text-color);
+    font-weight: 800;
     font-size: 9px;
     text-anchor: middle;
     dominant-baseline: middle;
+}
+
+.score strong {
+    color: #f40612;
 }
 
 .show-tagline {
