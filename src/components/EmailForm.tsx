@@ -52,17 +52,17 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                         sx={{
                             width: '65%',
                             '& .MuiFilledInput-root': {
-                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                backgroundColor: 'rgba(0, 0, 0, 0)',
                                 borderRadius: '40px',
-                                color: '#fff',
+                                color: 'var(--text-color)',
                                 border: '2px solid var(--text-color)',
                                 boxShadow: 'none',
                                 paddingLeft: '24px',
                                 transition: 'background-color 0s',           // không đổi màu khi hover
                                 '&:hover': {
-                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên màu khi hover
+                                    backgroundColor: 'rgba(0, 0, 0, 0)', // giữ nguyên màu khi hover
                                 },'&.Mui-focused': {
-                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // giữ nguyên khi focus
+                                    backgroundColor: 'rgba(0, 0, 0, 0)', // giữ nguyên khi focus
                                 },
                                 '&:before': {
                                     borderBottom: 'none !important',
@@ -74,7 +74,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                                     borderBottom: 'none !important',
                                 },
                                 '& input': {
-                                    caretColor: '#fff',
+                                    caretColor: 'var(--text-color)',
                                 },
                                 '& input:-webkit-autofill': {
                                     WebkitBoxShadow: '0 0 0 1000px rgba(0,0,0,0) inset !important',
@@ -84,10 +84,10 @@ const EmailForm: React.FC<EmailFormProps> = ({ setPlaying }) => {
                                 },
                             },
                             '& .MuiInputLabel-root': {
-                                color: '#fff',
+                                color: 'var(--text-color)',
                                 left: '24px',
                                 '&.Mui-focused': {
-                                    color: '#fff',
+                                    color: 'var(--text-color)',
                                 },
                             },
                         }}

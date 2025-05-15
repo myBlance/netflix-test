@@ -75,6 +75,8 @@ const Banner: React.FC = () => {
         ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) `
         : `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7))`;
 
+    
+
     return (
         <header className="banner">
 
@@ -93,7 +95,12 @@ const Banner: React.FC = () => {
                     >
                         <div className="banner-content">
                             <h1>{movies[currentSlide]?.title || movies[currentSlide]?.name}</h1>
-                            <p>{movies[currentSlide]?.overview}</p>
+                            <p>
+                                {movies[currentSlide]?.overview.length > 150
+                                    ? movies[currentSlide].overview.slice(0, 150) + "..."
+                                    : movies[currentSlide]?.overview}
+                            </p>
+
                             <div className="email-form">
                                 <EmailForm setPlaying={setPlaying} />
                             </div>
